@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>志願理由書 3パターン｜松井 美奈｜福井大学 教育学部 初等教育コース</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1c1c2e;
+    --muted: #5e5e78;
+    --bg: #f0ede8;
+    --white: #fffefa;
+    --border: #d5cfc5;
+    --a: #3a6b5f;
+    --b: #5a4a7a;
+    --c: #7a3f3f;
+    --a-lt: #eaf2f0;
+    --b-lt: #eeebf5;
+    --c-lt: #f5eaea;
+    --gold: #b8955a;
+    --gold-lt: #f7f0e4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 14px;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 26px 20px 20px;
+    text-align: center;
+  }
+  .h-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(14px, 3.8vw, 19px);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+  header .h-sub {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 6px;
+  }
+
+  /* ===== NOTICE ===== */
+  .notice {
+    background: #fff9e8;
+    border-left: 3px solid var(--gold);
+    margin: 14px 14px 0;
+    padding: 10px 13px;
+    font-size: 12px;
+    color: #6b5520;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.75;
+  }
+
+  /* ===== SECTION NAV ===== */
+  .section-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 14px 14px 0;
+  }
+  .sec-btn {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 130px;
+    padding: 9px 8px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.18s;
+    line-height: 1.5;
+  }
+  .sec-btn.active {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--white);
+    font-weight: 500;
+  }
+  .sec-btn .sn { font-size: 10px; opacity: 0.7; display: block; }
+
+  /* ===== SECTION PANEL ===== */
+  .section-panel {
+    display: none;
+    padding: 14px;
+  }
+  .section-panel.active { display: block; }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .section-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  /* ===== PATTERN TABS ===== */
+  .ptabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0;
+  }
+  .ptab {
+    flex: 1;
+    padding: 9px 4px;
+    border: none;
+    border-radius: 7px 7px 0 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.55;
+    transition: opacity 0.18s;
+    line-height: 1.4;
+  }
+  .ptab.pa { background: var(--a); }
+  .ptab.pb { background: var(--b); }
+  .ptab.pc { background: var(--c); }
+  .ptab.active { opacity: 1; }
+
+  /* ===== PATTERN PANEL ===== */
+  .ppanel {
+    display: none;
+    background: var(--white);
+    border-radius: 0 0 8px 8px;
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 18px 16px 22px;
+  }
+  .ppanel.active { display: block; }
+
+  .pp-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pp-badge {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 13px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .ba { background: var(--a); }
+  .bb { background: var(--b); }
+  .bc { background: var(--c); }
+
+  .pp-title { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .pp-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .strategy {
+    padding: 10px 12px;
+    border-radius: 5px;
+    font-size: 11.5px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .sa { background: var(--a-lt); border-left: 3px solid var(--a); }
+  .sb { background: var(--b-lt); border-left: 3px solid var(--b); }
+  .sc { background: var(--c-lt); border-left: 3px solid var(--c); }
+  .strategy strong { display: block; margin-bottom: 3px; font-size: 11.5px; }
+
+  .essay {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14.5px;
+    line-height: 2;
+    color: var(--ink);
+  }
+  .essay p { margin-bottom: 1.2em; text-indent: 1em; }
+  .essay p:last-child { margin-bottom: 0; }
+
+  /* short answer style (non-essay sections) */
+  .ans-block { margin-bottom: 0; }
+  .ans-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .ans-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+
+  .wordcount {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .copy-btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 11px;
+    border-radius: 6px;
+    background: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-weight: 500;
+  }
+  .ca { color: var(--a); border: 1.5px solid var(--a); }
+  .cb { color: var(--b); border: 1.5px solid var(--b); }
+  .cc { color: var(--c); border: 1.5px solid var(--c); }
+  .ca:hover { background: var(--a); color: #fff; }
+  .cb:hover { background: var(--b); color: #fff; }
+  .cc:hover { background: var(--c); color: #fff; }
+
+  .copied-msg { text-align: center; font-size: 11px; color: var(--muted); margin-top: 6px; height: 16px; }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 20px 14px;
+    line-height: 1.9;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-label">Statement of Purpose · Draft</div>
+  <h1>福井大学 教育学部 学校教育課程<br>初等教育コース　学校推薦型選抜Ⅰ<br>志願理由書（様式２）</h1>
+  <div class="h-sub">松井 美奈 ／ 各項目 3パターン比較ドラフト</div>
+</header>
+
+<div class="notice">
+  ⚠️ これらの文章は、あくまでも先生が作成した記入例です。これまで通り一般入試を想定した日々の学習は継続しつつ、この記入例を出発点として松井さん自身の言葉で少しずつ仕上げていきましょう。
+</div>
+
+<!-- ===== SECTION NAV ===== -->
+<div class="section-nav">
+  <button class="sec-btn active" onclick="showSection('s1')">
+    <span class="sn">様式２・表面メイン</span>志願理由
+  </button>
+  <button class="sec-btn" onclick="showSection('s2')">
+    <span class="sn">裏面①</span>将来の進路希望
+  </button>
+  <button class="sec-btn" onclick="showSection('s3')">
+    <span class="sn">裏面②</span>自分が特に優れていること
+  </button>
+  <button class="sec-btn" onclick="showSection('s4')">
+    <span class="sn">裏面③</span>好きな教科・科目とその理由
+  </button>
+  <button class="sec-btn" onclick="showSection('s5')">
+    <span class="sn">裏面④</span>趣味・特技・資格
+  </button>
+  <button class="sec-btn" onclick="showSection('s6')">
+    <span class="sn">裏面⑤</span>上記以外の特記事項
+  </button>
+</div>
+
+<!-- ===== S1: 志願理由 ===== -->
+<div class="section-panel active" id="s1">
+  <div class="section-title">① 志願理由</div>
+  <div class="section-note">様式２・表面の主欄。アドミッション・ポリシー「求める学生像」（教育への情熱・探究心・子どもの成長を支える意欲）に沿って詳しく記入します。目安：手書きA4表面いっぱい（600〜800字程度）</div>
+
+  <div class="ptabs" id="tabs_s1">
+    <button class="ptab pa active" onclick="switchPat('s1',1)">パターンA<br>担任の先生体験軸</button>
+    <button class="ptab pb" onclick="switchPat('s1',2)">パターンB<br>探究活動×学術軸</button>
+    <button class="ptab pc" onclick="switchPat('s1',3)">パターンC<br>幼小連携・将来像軸</button>
+  </div>
+
+  <!-- A -->
+  <div class="ppanel active" id="s1_p1">
+    <div class="pp-header">
+      <div class="pp-badge ba">A</div>
+      <div>
+        <div class="pp-title">小学校担任の先生への憧れを起点にした成長ストーリー型</div>
+        <div class="pp-sub">「寄り添ってくれた恩師」という原体験を起点に、教師への志を自然な流れで語る</div>
+      </div>
+    </div>
+    <div class="strategy sa">
+      <strong>📌 この型が有効な場面</strong>
+      具体的なエピソードで読み手を引き込みたいとき。恩師体験という「証拠」を核に、子どもへの関心・自己成長・大学での学びを一本の線で繋げる。書類審査では具体性が最も評価されやすい。
+    </div>
+    <div class="essay" id="s1_t1">
+      <p>私が福井大学教育学部初等教育コースを志願する理由は、小学校の担任の先生との出会いにあります。小学生のころ、私は学校に行くことが苦しくなった時期がありました。その時、担任の先生は毎日根気強く寄り添い、たくさんの言葉をかけてくれました。そのおかげで少しずつ前を向くことができ、「自分も将来、困っている子どもに寄り添える先生になりたい」と思うようになりました。</p>
+      <p>高校では、その思いをより深めるために英語の学習に力を入れました。将来の社会で必要になると考えたこともありますが、語彙を着実に増やし、英作文で実践的に使えるようになるという経験を通して、「積み重ねることで力がつく」という学びの喜びを実感しました。この体験は、子ども一人ひとりの小さな進歩を丁寧に支えたいという気持ちをさらに強くしてくれました。</p>
+      <p>また、探究活動では、大人の意見と異なると感じた場面で自分の考えを伝えることに苦労しました。根拠を集め、論理的に話す力を意識して鍛えた結果、周りに流されずに意見を発信できるようになりました。この経験から、子どもたちが主体的に意見を持ち、表現できる環境をつくることが教育の重要な役割だと感じています。</p>
+      <p>貴学初等教育コースは、幼小連携教育や地域と連携した実践的な教員養成を強みとしており、1年次から授業観察ができる点に大きな魅力を感じています。幼稚園から小学校への移行期を丁寧に支えるカリキュラムを学ぶことで、子ども一人ひとりの個性を引き出す小学校教員になるという目標に近づけると確信しています。入学後は地球連携カリキュラム研究にも取り組み、地域の教育課題に積極的に関わっていきたいと考えています。</p>
+    </div>
+    <div class="wordcount" id="s1_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s1_t1','s1_m1')">📋 パターンAの本文をコピーする</button>
+    <div class="copied-msg" id="s1_m1"></div>
+  </div>
+
+  <!-- B -->
+  <div class="ppanel" id="s1_p2">
+    <div class="pp-header">
+      <div class="pp-badge bb">B</div>
+      <div>
+        <div class="pp-title">探究活動での自己変革を軸にした意志・学術型</div>
+        <div class="pp-sub">「意見を言えなかった」という弱点の克服を核に、教育への知的探究心を前面に出す構成</div>
+      </div>
+    </div>
+    <div class="strategy sb">
+      <strong>📌 この型が有効な場面</strong>
+      課題・困難の克服プロセスを示したいとき。「主体性・探究心」を重視する福井大学のAPと正面から呼応する。面接で「高校時代に頑張ったこと」と組み合わせて語りやすい。
+    </div>
+    <div class="essay" id="s1_t2">
+      <p>私が福井大学教育学部初等教育コースを志願する理由は、探究活動での経験を通じて「主体的に学ぶことの大切さ」を痛感し、その力を子どもたちに届けたいと思うようになったからです。</p>
+      <p>高校の探究活動において、大人の方々の意見と異なる考えを持った場面で、自分の意見をうまく伝えられずに悩みました。そこで、事前に情報を集め、根拠を明確にして発言する習慣を意識的につくるようにしました。その結果、周囲に流されることなく自信をもって自分の考えを言えるようになりました。この経験が、子どもたち一人ひとりが「自分の考えを大切にして発信できる力」を育てることへの強い関心につながっています。</p>
+      <p>また、小学校時代の担任の先生が、登校が苦しかった私に毎日寄り添い、励まし続けてくれた経験も、教師を目指す原点となっています。教師という仕事は、子どもの学力を伸ばすだけでなく、その子の心に近づき、人生の中で「前を向くきっかけ」を与えられる職業だと感じています。</p>
+      <p>貴学は教育養成フラッグシップ大学として選ばれており、実践的な指導力が身につく環境が整っています。特に、リゾン型学びのネットワーク（異なる学年で学び合い、複数の科目を橋渡しする学習形態）と1年次からの授業参観制度は、現場に即した学びを積み上げるために最適な環境です。入学後は地球連携カリキュラム研究を中心に学び、地域の学校と連携しながら、子どもたちの主体的な学びを支える教育を探究していきたいと考えています。</p>
+    </div>
+    <div class="wordcount" id="s1_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s1_t2','s1_m2')">📋 パターンBの本文をコピーする</button>
+    <div class="copied-msg" id="s1_m2"></div>
+  </div>
+
+  <!-- C -->
+  <div class="ppanel" id="s1_p3">
+    <div class="pp-header">
+      <div class="pp-badge bc">C</div>
+      <div>
+        <div class="pp-title">幼小連携・地域教育ビジョンを前面に出す目的意識型</div>
+        <div class="pp-sub">「なぜ福井大学でなければならないか」を最も明快に示す。大学の特色との整合性が高い構成</div>
+      </div>
+    </div>
+    <div class="strategy sc">
+      <strong>📌 この型が有効な場面</strong>
+      「なぜこの大学・このコースでなければならないのか」を強調したいとき。貴学固有の特色（幼小連携、地球連携、STEAMラボ等）と志望理由を直結させるため、書類審査で差別化しやすい。
+    </div>
+    <div class="essay" id="s1_t3">
+      <p>私が福井大学教育学部初等教育コースを志願する理由は、幼稚園から小学校への移行期に着目した教育に強く惹かれているからです。私自身、幼稚園から小学生になったとき、何もかもが一気に変わる環境の変化に戸惑い、学校が苦しい場所になった時期がありました。その時、小学校の担任の先生に毎日寄り添っていただき、立ち直ることができました。この体験から、入学直後のこの「移行期」を丁寧に支える教師の存在がいかに重要かを身をもって感じています。</p>
+      <p>福井大学初等教育コースの2系列は、幼稚園と小学校をつなぐことを学ぶために設計されており、私の問題意識と深く一致しています。また、リゾン型学びのネットワーク、STEAMラボ、地域と連携した実践的な教職演習など、時代の変化に対応した最新の学習環境が整っている点も他大学にはない大きな魅力です。1年次から授業参観ができることで、理論と現場を早い段階から結びつけながら学べると考えています。</p>
+      <p>高校の探究活動では、大人と異なる意見を持つ場面で根拠を集めて発言する習慣を身につけ、周囲に流されない自分の意見を表現できるようになりました。この「主体的に考え、伝える力」は、子どもたちにも育んでいきたい力そのものです。</p>
+      <p>入学後は、地球連携カリキュラム研究に取り組み、1年次に学校現場を実際に見て、2〜3年次には合宿等を通じて「学校」と「地域側」の視点を深めていきたいと考えています。将来は福井で小学校の先生となり、子ども一人ひとりの個性を引き出しながら、多様な背景を持つ子どもたちに寄り添える教師を目指します。</p>
+    </div>
+    <div class="wordcount" id="s1_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s1_t3','s1_m3')">📋 パターンCの本文をコピーする</button>
+    <div class="copied-msg" id="s1_m3"></div>
+  </div>
+</div><!-- /s1 -->
+
+<!-- ===== S2: 将来の進路希望 ===== -->
+<div class="section-panel" id="s2">
+  <div class="section-title">② 将来の進路希望（校種や教科を具体的に）</div>
+  <div class="section-note">裏面の記入項目①。校種・教科・地域など具体的な記述が求められます。3〜5行程度の記述が適切です。</div>
+
+  <div class="ptabs" id="tabs_s2">
+    <button class="ptab pa active" onclick="switchPat('s2',1)">パターンA<br>端的・シンプル型</button>
+    <button class="ptab pb" onclick="switchPat('s2',2)">パターンB<br>理由付き・丁寧型</button>
+    <button class="ptab pc" onclick="switchPat('s2',3)">パターンC<br>段階・ビジョン型</button>
+  </div>
+
+  <div class="ppanel active" id="s2_p1">
+    <div class="pp-header"><div class="pp-badge ba">A</div><div><div class="pp-title">端的・シンプル型</div><div class="pp-sub">明快さを重視。他の欄との重複を避けてすっきり書く</div></div></div>
+    <div class="strategy sa"><strong>📌 この型が有効な場面</strong>志願理由の欄に十分な情報を書いた場合。重複を避け、端的に伝える。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s2_t1">　福井県内の公立小学校の教員を目指しています。特に、低学年の担任として子ども一人ひとりに寄り添いながら、学校生活のスタートを支えていきたいと考えています。将来的には学級担任として全教科を指導しながら、子どもの主体的な学びを引き出す授業づくりに取り組んでいきたいです。</div>
+    </div>
+    <div class="wordcount" id="s2_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s2_t1','s2_m1')">📋 パターンAをコピーする</button>
+    <div class="copied-msg" id="s2_m1"></div>
+  </div>
+
+  <div class="ppanel" id="s2_p2">
+    <div class="pp-header"><div class="pp-badge bb">B</div><div><div class="pp-title">理由付き・丁寧型</div><div class="pp-sub">なぜその校種・地域なのかの理由を添える</div></div></div>
+    <div class="strategy sb"><strong>📌 この型が有効な場面</strong>地元貢献の意欲やコース選択の必然性を合わせてアピールしたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s2_t2">　福井県内の公立小学校の教員を目指しています。自分自身が地元の小学校で担任の先生に支えられた経験から、地元の子どもたちに貢献したいという思いが強くあります。学級担任として全教科を指導することを基本としながら、特に国語や道徳の時間を通じて、子どもたちが自分の考えを言葉で表現する力を育てていきたいと考えています。また、特別支援の視点も大切にし、様々な背景を持つ子どもたちに寄り添える教員を目指したいです。</div>
+    </div>
+    <div class="wordcount" id="s2_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s2_t2','s2_m2')">📋 パターンBをコピーする</button>
+    <div class="copied-msg" id="s2_m2"></div>
+  </div>
+
+  <div class="ppanel" id="s2_p3">
+    <div class="pp-header"><div class="pp-badge bc">C</div><div><div class="pp-title">段階・ビジョン型</div><div class="pp-sub">入学後〜卒業後の段階的なビジョンを示す</div></div></div>
+    <div class="strategy sc"><strong>📌 この型が有効な場面</strong>長期的な目標の明確さをアピールしたいとき。「主体性・目的意識」を評価するAPに合致する。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s2_t3">　卒業後は福井県内の公立小学校の教員になることを第一の目標としています。将来は低学年の担任として、幼小連携の視点を活かしながら、子どもが安心して学べる学級環境をつくりたいと考えています。さらに経験を積んだ後は、学年主任や特別支援コーディネーターなど、学校全体の教育体制を支える立場にも挑戦し、地域と連携した学校づくりに貢献していきたいです。</div>
+    </div>
+    <div class="wordcount" id="s2_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s2_t3','s2_m3')">📋 パターンCをコピーする</button>
+    <div class="copied-msg" id="s2_m3"></div>
+  </div>
+</div><!-- /s2 -->
+
+<!-- ===== S3: 自分が特に優れていること ===== -->
+<div class="section-panel" id="s3">
+  <div class="section-title">③ 自分が特に優れていると思っていること</div>
+  <div class="section-note">裏面の記入項目②。強みをエピソードで裏付けます。3〜5行程度。</div>
+
+  <div class="ptabs" id="tabs_s3">
+    <button class="ptab pa active" onclick="switchPat('s3',1)">パターンA<br>負けず嫌い・継続力</button>
+    <button class="ptab pb" onclick="switchPat('s3',2)">パターンB<br>主体的発信力</button>
+    <button class="ptab pc" onclick="switchPat('s3',3)">パターンC<br>明朗・人間関係構築力</button>
+  </div>
+
+  <div class="ppanel active" id="s3_p1">
+    <div class="pp-header"><div class="pp-badge ba">A</div><div><div class="pp-title">負けず嫌い・継続力型</div><div class="pp-sub">試験の成績が不振だった経験から学習計画を立て直した具体的エピソードで強みを示す</div></div></div>
+    <div class="strategy sa"><strong>📌 この型が有効な場面</strong>「学習の自発性・計画性・持続性」を問う推薦書・面接との整合性を高めたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s3_t1">　自分が特に優れていると感じる点は、諦めずに粘り強く取り組む継続力です。模擬試験の成績が思い通りに出なかった際、落ち込むだけでなく、すぐに勉強計画を見直し、積極的にわからない部分を先生に質問しに行きました。どんなに難しい課題に直面しても最後まで諦めずに取り組む姿勢は、子どもたちへの粘り強い支援にも活かせると考えています。</div>
+    </div>
+    <div class="wordcount" id="s3_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s3_t1','s3_m1')">📋 パターンAをコピーする</button>
+    <div class="copied-msg" id="s3_m1"></div>
+  </div>
+
+  <div class="ppanel" id="s3_p2">
+    <div class="pp-header"><div class="pp-badge bb">B</div><div><div class="pp-title">主体的発信力型</div><div class="pp-sub">探究活動での根拠を持った発言の習慣化を強みとして示す</div></div></div>
+    <div class="strategy sb"><strong>📌 この型が有効な場面</strong>APの「主体性・協働的に学ぶ態度」に直結させたいとき。志願理由（パターンB）との一貫性が高い。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s3_t2">　自分が特に優れていると感じる点は、根拠を持って自分の意見を発信できる力です。高校の探究活動において、大人の意見と異なると感じた場面でも、事前に情報を収集し、根拠を明確にしてから発言する習慣を意識的に身につけました。その結果、周囲の雰囲気に流されずに自信をもって意見を述べられるようになりました。この力を、子どもたちが自分の考えを大切にする授業づくりに活かしていきたいです。</div>
+    </div>
+    <div class="wordcount" id="s3_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s3_t2','s3_m2')">📋 パターンBをコピーする</button>
+    <div class="copied-msg" id="s3_m2"></div>
+  </div>
+
+  <div class="ppanel" id="s3_p3">
+    <div class="pp-header"><div class="pp-badge bc">C</div><div><div class="pp-title">明朗・人間関係構築力型</div><div class="pp-sub">「常に明朗に人と接することができる」という強みをエピソードで具体化する</div></div></div>
+    <div class="strategy sc"><strong>📌 この型が有効な場面</strong>子どもとの関係構築や「コミュニケーション能力」を重視する面接対策と合わせたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s3_t3">　自分が特に優れていると感じる点は、常に明るく人と接することができることです。初対面の人に対しても自然に笑顔で話しかけることができ、放課後の子どもとの関わりやボランティア活動の場でも、子どもたちがすぐに打ち解けてくれると感じています。また、どんな状況でも最後まで諦めずに物事に取り組む粘り強さも持ち合わせており、信頼関係を築きながら地道に努力を続けることが自分の強みだと考えています。</div>
+    </div>
+    <div class="wordcount" id="s3_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s3_t3','s3_m3')">📋 パターンCをコピーする</button>
+    <div class="copied-msg" id="s3_m3"></div>
+  </div>
+</div><!-- /s3 -->
+
+<!-- ===== S4: 好きな教科 ===== -->
+<div class="section-panel" id="s4">
+  <div class="section-title">④ 好きな教科・科目とその理由</div>
+  <div class="section-note">裏面の記入項目③。英語への取り組みを中心に、教育との接続も意識して記述します。3〜4行程度。</div>
+
+  <div class="ptabs" id="tabs_s4">
+    <button class="ptab pa active" onclick="switchPat('s4',1)">パターンA<br>英語・継続学習軸</button>
+    <button class="ptab pb" onclick="switchPat('s4',2)">パターンB<br>英語・実践力軸</button>
+    <button class="ptab pc" onclick="switchPat('s4',3)">パターンC<br>英語＋国語・複合軸</button>
+  </div>
+
+  <div class="ppanel active" id="s4_p1">
+    <div class="pp-header"><div class="pp-badge ba">A</div><div><div class="pp-title">英語・継続学習軸</div><div class="pp-sub">「毎日続けた」という継続力を英語への取り組みで示す</div></div></div>
+    <div class="strategy sa"><strong>📌 この型が有効な場面</strong>「勉強の自発性・計画性・持続性」を英語学習で示したいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s4_t1">　最も力を入れてきた科目は英語です。将来の社会でも必ず役立つ力だという確信から、高校3年間を通じて毎日欠かさず単語学習を続けました。継続する中で語彙が増えるだけでなく、覚えた単語を英作文の中で実際に使えるようになるという実践的な力が身についたと感じています。また、新聞の英語記事や英語のテキストを読む習慣が読解力を高めてくれました。この「毎日続ける力」を教師としての学び続ける姿勢にも活かしていきたいです。</div>
+    </div>
+    <div class="wordcount" id="s4_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s4_t1','s4_m1')">📋 パターンAをコピーする</button>
+    <div class="copied-msg" id="s4_m1"></div>
+  </div>
+
+  <div class="ppanel" id="s4_p2">
+    <div class="pp-header"><div class="pp-badge bb">B</div><div><div class="pp-title">英語・実践力軸</div><div class="pp-sub">英語力の実践的な使い方と、小学校英語教育への関心を接続する</div></div></div>
+    <div class="strategy sb"><strong>📌 この型が有効な場面</strong>小学校英語指導への関心を将来の教職と結びつけたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s4_t2">　最も好きな科目は英語です。単語を覚えるだけでなく、英作文の中で実際に使えるかを意識しながら学習を進めてきました。毎日継続して語彙を増やした結果、文章の読み書きに自信がつき、英語で考えることへの楽しさを感じられるようになりました。小学校でも英語教育の重要性が高まっている現在、子どもたちに英語を「楽しいもの」と感じてもらえるような指導ができる教員になりたいという気持ちも高まっています。</div>
+    </div>
+    <div class="wordcount" id="s4_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s4_t2','s4_m2')">📋 パターンBをコピーする</button>
+    <div class="copied-msg" id="s4_m2"></div>
+  </div>
+
+  <div class="ppanel" id="s4_p3">
+    <div class="pp-header"><div class="pp-badge bc">C</div><div><div class="pp-title">英語＋国語・複合軸</div><div class="pp-sub">英語と国語の両方への関心を示すことで、言語教育への幅広い意欲をアピールする</div></div></div>
+    <div class="strategy sc"><strong>📌 この型が有効な場面</strong>言語系全般への関心の広さを示したいとき。「表現する力」を育てる教師像と連携させやすい。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s4_t3">　特に力を入れてきた科目は英語と国語です。英語は毎日の単語学習と英作文練習を通じて、実践的な運用力を身につけてきました。国語については、文章を読んで自分の考えをまとめる力が、すべての教科学習の根幹になると感じており、論述問題に積極的に取り組んできました。言葉を正確に理解し、自分の考えを適切に表現する力は、子どもたちにも大切にしてほしい能力であり、言語教育の面から子どもの学びを支えていきたいと考えています。</div>
+    </div>
+    <div class="wordcount" id="s4_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s4_t3','s4_m3')">📋 パターンCをコピーする</button>
+    <div class="copied-msg" id="s4_m3"></div>
+  </div>
+</div><!-- /s4 -->
+
+<!-- ===== S5: 趣味・特技・資格 ===== -->
+<div class="section-panel" id="s5">
+  <div class="section-title">⑤ 趣味・特技・有している資格</div>
+  <div class="section-note">裏面の記入項目④。簡潔に、かつ教育との接続が見えるように書くと効果的です。2〜3行程度。</div>
+
+  <div class="ptabs" id="tabs_s5">
+    <button class="ptab pa active" onclick="switchPat('s5',1)">パターンA<br>端的列挙型</button>
+    <button class="ptab pb" onclick="switchPat('s5',2)">パターンB<br>意義付き型</button>
+    <button class="ptab pc" onclick="switchPat('s5',3)">パターンC<br>教育接続型</button>
+  </div>
+
+  <div class="ppanel active" id="s5_p1">
+    <div class="pp-header"><div class="pp-badge ba">A</div><div><div class="pp-title">端的列挙型</div></div></div>
+    <div class="strategy sa"><strong>📌 この型が有効な場面</strong>他の欄が充実しているので、この欄は簡潔にまとめたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s5_t1">　趣味は子どもと関わること（放課後の子どもたちとの交流、地域ボランティア）、英語の学習、読書です。特技は継続して物事に取り組むことで、3年間毎日の英単語学習を続けました。現在、英検2級を取得しており、準1級取得に向けて学習を続けています。</div>
+    </div>
+    <div class="wordcount" id="s5_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s5_t1','s5_m1')">📋 パターンAをコピーする</button>
+    <div class="copied-msg" id="s5_m1"></div>
+  </div>
+
+  <div class="ppanel" id="s5_p2">
+    <div class="pp-header"><div class="pp-badge bb">B</div><div><div class="pp-title">意義付き型</div></div></div>
+    <div class="strategy sb"><strong>📌 この型が有効な場面</strong>趣味・特技の記述に人間的な厚みを加えたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s5_t2">　趣味は子どもと関わることで、放課後に地域の子どもたちと交流する機会を大切にしています。子どもの言葉や表情から感情を読み取る感性が、自然と磨かれてきたと感じています。特技は継続力で、英語の毎日学習を3年間休まず続けました。保有資格は英検2級で、さらに上位の資格取得を目指しています。</div>
+    </div>
+    <div class="wordcount" id="s5_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s5_t2','s5_m2')">📋 パターンBをコピーする</button>
+    <div class="copied-msg" id="s5_m2"></div>
+  </div>
+
+  <div class="ppanel" id="s5_p3">
+    <div class="pp-header"><div class="pp-badge bc">C</div><div><div class="pp-title">教育接続型</div></div></div>
+    <div class="strategy sc"><strong>📌 この型が有効な場面</strong>趣味・特技と教師としての資質を明確に結びつけたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s5_t3">　趣味は子どもと関わることと読書です。子どもと接することで、一人ひとりの個性の違いに自然と興味を持つようになり、教育への関心がさらに高まりました。特技は粘り強く継続する力です。3年間毎日の英語学習を続けてきた経験が、この自信の根拠になっています。英検2級を保有しており、今後も資格取得を通じて自己研鑽を続けていきたいと考えています。</div>
+    </div>
+    <div class="wordcount" id="s5_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s5_t3','s5_m3')">📋 パターンCをコピーする</button>
+    <div class="copied-msg" id="s5_m3"></div>
+  </div>
+</div><!-- /s5 -->
+
+<!-- ===== S6: 特記事項 ===== -->
+<div class="section-panel" id="s6">
+  <div class="section-title">⑥ 上記以外の特記事項</div>
+  <div class="section-note">裏面の記入項目⑤。探究活動・ボランティア・学習支援など「主体性をもって様々な人々と協働して学ぶ態度」を具体的に示す欄。3〜5行程度。</div>
+
+  <div class="ptabs" id="tabs_s6">
+    <button class="ptab pa active" onclick="switchPat('s6',1)">パターンA<br>探究活動成果型</button>
+    <button class="ptab pb" onclick="switchPat('s6',2)">パターンB<br>ボランティア×学び型</button>
+    <button class="ptab pc" onclick="switchPat('s6',3)">パターンC<br>探究＋ビジョン接続型</button>
+  </div>
+
+  <div class="ppanel active" id="s6_p1">
+    <div class="pp-header"><div class="pp-badge ba">A</div><div><div class="pp-title">探究活動成果型</div><div class="pp-sub">高校の探究活動での取り組みを中心に、成果と学びを具体的に記述する</div></div></div>
+    <div class="strategy sa"><strong>📌 この型が有効な場面</strong>探究活動の経験を「知識・技能」「思考力・判断力・表現力」の評価に直接つなげたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s6_t1">　高校では探究特進科に所属し、探究活動に力を入れてきました。研究を進める中で、根拠を示しながら論理的に発言する力が身につきました。福井大学の探究活動との連携にも強く惹かれてオープンキャンパスに参加し、現場の先生方の話を聞いて学びへの意欲がさらに高まりました。高校での探究活動で身につけた「問いを立てて検証する力」を、大学での探究活動や教育実習に活かしていきたいと考えています。</div>
+    </div>
+    <div class="wordcount" id="s6_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s6_t1','s6_m1')">📋 パターンAをコピーする</button>
+    <div class="copied-msg" id="s6_m1"></div>
+  </div>
+
+  <div class="ppanel" id="s6_p2">
+    <div class="pp-header"><div class="pp-badge bb">B</div><div><div class="pp-title">ボランティア×学び型</div><div class="pp-sub">放課後の子どもとの関わりや地域ボランティアを通じた実践的な学びを示す</div></div></div>
+    <div class="strategy sb"><strong>📌 この型が有効な場面</strong>課外活動や社会との接点を示すことで「協働性・主体性」をアピールしたいとき。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s6_t2">　高校在学中、放課後に子どもたちと関わる機会を積極的につくってきました。地域イベントの手伝いや学習支援ボランティアを通じて、子どもの発達段階に応じた関わり方を実践的に学びました。また、高校の探究特進科での活動を通じて、問いを立て、調査し、発表する力を鍛えました。これらの経験を大学での学びに結びつけ、将来の夢である小学校教員へとつなげていきたいと考えています。</div>
+    </div>
+    <div class="wordcount" id="s6_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s6_t2','s6_m2')">📋 パターンBをコピーする</button>
+    <div class="copied-msg" id="s6_m2"></div>
+  </div>
+
+  <div class="ppanel" id="s6_p3">
+    <div class="pp-header"><div class="pp-badge bc">C</div><div><div class="pp-title">探究＋ビジョン接続型</div><div class="pp-sub">高校での探究活動の課題・反省を踏まえ、大学での成長ビジョンに接続する</div></div></div>
+    <div class="strategy sc"><strong>📌 この型が有効な場面</strong>「入学前の課題意識」と「大学での学習計画」を一貫して示したいとき。面接のプレゼンテーション素材としても使いやすい。</div>
+    <div class="ans-block">
+      <div class="ans-text" id="s6_t3">　高校の探究特進科での活動において、探究のプロセスには取り組みましたが、高校ではうまくいかなかった点も多く、その反省を大学で活かしていきたいという思いがあります。福井大学もオープンキャンパスで探究活動との連携を重視していると知り、大学の探究的な学びの場に参加することで、「問いを立てて実践する力」をより高めていきたいと感じました。また、放課後の子どもとの関わりや地域の学習支援ボランティアを通じて積んだ経験を、将来の小学校教育の場に活かしていきたいと考えています。</div>
+    </div>
+    <div class="wordcount" id="s6_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s6_t3','s6_m3')">📋 パターンCをコピーする</button>
+    <div class="copied-msg" id="s6_m3"></div>
+  </div>
+</div><!-- /s6 -->
+
+<footer>
+  Draft for 松井 美奈 ｜ 福井大学 教育学部 学校推薦型選抜Ⅰ 令和８年度<br>
+  ※ 今後は、少しずつ添削・修正を繰り返し最終版に仕上げていきましょう！by Takumi Wakabayashi。<br>
+  
+</footer>
+
+<script>
+// ---- Section nav ----
+function showSection(id) {
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sec-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['s1','s2','s3','s4','s5','s6'].indexOf(id);
+  document.querySelectorAll('.sec-btn')[idx].classList.add('active');
+}
+
+// ---- Pattern tabs ----
+function switchPat(sec, n) {
+  const tabs = document.querySelectorAll('#tabs_' + sec + ' .ptab');
+  tabs.forEach((t,i) => t.classList.toggle('active', i === n-1));
+  [1,2,3].forEach(i => {
+    const p = document.getElementById(sec + '_p' + i);
+    if (p) p.classList.toggle('active', i === n);
+  });
+}
+
+// ---- Copy ----
+function copyText(textId, msgId) {
+  const el = document.getElementById(textId);
+  const text = (el.innerText || el.textContent).trim();
+  navigator.clipboard.writeText(text).then(() => {
+    showMsg(msgId);
+  }).catch(() => {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    showMsg(msgId);
+  });
+}
+function showMsg(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = 'コピーしました ✓';
+  setTimeout(() => { el.textContent = ''; }, 2500);
+}
+
+// ---- Word count ----
+function countAndSet(textId, countId) {
+  const el = document.getElementById(textId);
+  if (!el || !document.getElementById(countId)) return;
+  const n = (el.innerText || el.textContent).replace(/\s/g,'').length;
+  document.getElementById(countId).textContent = '文字数（空白除く）：約 ' + n + ' 字';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const pairs = [
+    ['s1_t1','s1_c1'],['s1_t2','s1_c2'],['s1_t3','s1_c3'],
+    ['s2_t1','s2_c1'],['s2_t2','s2_c2'],['s2_t3','s2_c3'],
+    ['s3_t1','s3_c1'],['s3_t2','s3_c2'],['s3_t3','s3_c3'],
+    ['s4_t1','s4_c1'],['s4_t2','s4_c2'],['s4_t3','s4_c3'],
+    ['s5_t1','s5_c1'],['s5_t2','s5_c2'],['s5_t3','s5_c3'],
+    ['s6_t1','s6_c1'],['s6_t2','s6_c2'],['s6_t3','s6_c3'],
+  ];
+  pairs.forEach(([t,c]) => countAndSet(t,c));
+});
+</script>
+</body>
+</html>

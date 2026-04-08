@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>志望理由書 3パターン｜大西 花｜青山学院大学 文学部英米文学科</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --muted: #5a5a72;
+    --light: #f4f2ee;
+    --accent: #8b6f47;
+    --accent2: #c9a96e;
+    --border: #d8d0c0;
+    --white: #fffef9;
+    --tab1: #4a7c6f;
+    --tab2: #6b5b8a;
+    --tab3: #8b4a4a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--light);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 28px 24px 22px;
+    text-align: center;
+  }
+  header .label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent2);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  header .sub {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 6px;
+  }
+
+  .notice {
+    background: #fff8e8;
+    border-left: 3px solid var(--accent2);
+    margin: 16px 16px 0;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #6b5a30;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.7;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    margin: 16px 16px 0;
+    gap: 4px;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 10px 6px;
+    border: none;
+    border-radius: 6px 6px 0 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    line-height: 1.4;
+  }
+  .tab-btn.t1 { background: var(--tab1); }
+  .tab-btn.t2 { background: var(--tab2); }
+  .tab-btn.t3 { background: var(--tab3); }
+  .tab-btn.active { opacity: 1; }
+
+  /* Panel */
+  .panel {
+    display: none;
+    background: var(--white);
+    margin: 0 16px 24px;
+    border-radius: 0 0 8px 8px;
+    padding: 24px 20px 28px;
+    border: 1px solid var(--border);
+    border-top: none;
+  }
+  .panel.active { display: block; }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .panel-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .b1 { background: var(--tab1); }
+  .b2 { background: var(--tab2); }
+  .b3 { background: var(--tab3); }
+
+  .panel-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .panel-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .essay {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .essay p {
+    margin-bottom: 1.4em;
+    text-indent: 1em;
+  }
+  .essay p:last-child { margin-bottom: 0; }
+
+  .word-count {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .strategy-box {
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .s1 { background: #eef5f2; border-left: 3px solid var(--tab1); }
+  .s2 { background: #f0eef5; border-left: 3px solid var(--tab2); }
+  .s3 { background: #f5eeed; border-left: 3px solid var(--tab3); }
+  .strategy-box strong { display: block; font-size: 12px; font-weight: 500; margin-bottom: 4px; }
+
+  .copy-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: 1.5px solid currentColor;
+    border-radius: 6px;
+    background: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .copy-btn.c1 { color: var(--tab1); }
+  .copy-btn.c2 { color: var(--tab2); }
+  .copy-btn.c3 { color: var(--tab3); }
+  .copy-btn:hover { color: #fff; }
+  .copy-btn.c1:hover { background: var(--tab1); border-color: var(--tab1); }
+  .copy-btn.c2:hover { background: var(--tab2); border-color: var(--tab2); }
+  .copy-btn.c3:hover { background: var(--tab3); border-color: var(--tab3); }
+
+  .copied-msg {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 8px;
+    height: 18px;
+    color: var(--muted);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 16px;
+    line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="label">Statement of Purpose · Draft</div>
+  <h1>青山学院大学 文学部英米文学科<br>自己推薦入学者選抜（英語資格取得者）<br>志望動機・入学後の計画・目標</h1>
+  <div class="sub">大西 花 ／ 3パターン比較ドラフト</div>
+</header>
+
+<div class="notice">
+  ⚠️ 大西さんへ、これらはあくまでも先生が大西さんのくれた情報をもとに作成した記入例です。一般入試を想定した他教科の勉強は継続しつつ、これらの記入例を出発点として、別途マニュアルの指示に従い、少しづつ大西さんオリジナルの志望理由書に仕上げていきましょう。</div>
+
+<div class="tabs">
+  <button class="tab-btn t1 active" onclick="switchTab(1)">パターンA<br>留学体験軸</button>
+  <button class="tab-btn t2" onclick="switchTab(2)">パターンB<br>CA・社会貢献軸</button>
+  <button class="tab-btn t3" onclick="switchTab(3)">パターンC<br>異文化理解・学術軸</button>
+</div>
+
+<!-- Panel A -->
+<div class="panel active" id="panel1">
+  <div class="panel-header">
+    <div class="panel-badge b1">A</div>
+    <div>
+      <div class="panel-title">留学体験を起点にした成長ストーリー型</div>
+      <div class="panel-sub">ニュージーランド留学10か月間を核に置き、自己変容と英語力向上を丁寧に語る構成</div>
+    </div>
+  </div>
+  <div class="strategy-box s1">
+    <strong>📌 この型が有効な場面</strong>
+    具体的なエピソードで読み手を引き込みたいとき。留学体験という「証拠」を軸に、英語力・人間的成長・志望動機を自然な流れで結びつける。書類審査では具体性が評価されやすい。
+  </div>
+  <div class="essay" id="textA">
+    <p>私が貴学英米文学科を志望する最大の理由は、英語を単なる「技能」としてではなく、異なる文化や価値観を理解するための「扉」として深く学びたいという思いにあります。</p>
+    <p>高校在学中に経験したニュージーランドへの10か月間の留学は、私の英語観と人生観を根本から変えました。渡航当初、授業や日常生活で自分の考えを英語で伝えようとするたびに、言語の壁だけでなく、思考の構造そのものが異なることを痛感しました。現地の友人たちは意見の違いを積極的に表明し、互いの価値観の差を楽しみながら対話していました。私はその姿勢に衝撃を受け、ただ文法的に正確な英語を話すことよりも、自分の考えを英語で「相手に届ける」ことを意識するようになりました。この経験を通じて、英語は異文化を橋渡しするコミュニケーションの道具であると実感し、さらに深く学びたいという意欲が強まりました。</p>
+    <p>帰国後は英検準1級取得に向けて毎日語彙学習と過去問演習に取り組み、リーディング・リスニング・ライティングの総合力を高めました。また、英語だけでなく日本語力の基盤を持つことで、英語圏の文学や文化を比較の視点から考察できる力を養いたいと考えています。</p>
+    <p>貴学英米文学科には英語・文化・コミュニケーション・英語教育学という多様なコースがあり、異文化共生という貴学のアドミッション・ポリシーと私の関心が深く一致しています。特に、IEプログラムで小人数の環境に身を置きながら実践的な英語力を磨けることに強く惹かれています。入学後は異文化間コミュニケーション論を中心に学び、将来は国際線CAとして異なる国籍・価値観を持つ人々と向き合う仕事に就きたいと考えています。大学での学びを通じて、国と国の間にあるギャップを縮める人材になることが私の目標です。</p>
+  </div>
+  <div class="word-count" id="countA"></div>
+  <button class="copy-btn c1" onclick="copyText('textA', this)">📋 このパターンの本文をコピーする</button>
+  <div class="copied-msg" id="msgA"></div>
+</div>
+
+<!-- Panel B -->
+<div class="panel" id="panel2">
+  <div class="panel-header">
+    <div class="panel-badge b2">B</div>
+    <div>
+      <div class="panel-title">将来像（CA）から逆算した目的意識型</div>
+      <div class="panel-sub">明確なキャリアビジョンを冒頭に打ち出し、学習経験・志望理由・大学での計画を一本の線で繋ぐ構成</div>
+    </div>
+  </div>
+  <div class="strategy-box s2">
+    <strong>📌 この型が有効な場面</strong>
+    「なぜこの大学でなければならないのか」を明快に示したいとき。目的意識の強さを前面に出し、学びの方向性が一貫していることを示す。面接との連動もしやすい。
+  </div>
+  <div class="essay" id="textB">
+    <p>私の将来の目標は、国際線の客室乗務員（CA）として日本人の視点から世界に優れたサービスを届け、国際社会に貢献することです。その実現に向けて、英語圏の言語・文化・コミュニケーションを体系的に学べる貴学文学部英米文学科を強く志望します。</p>
+    <p>幼少期から英語と海外への興味を持ち続け、中学から英語の授業に力を入れてきました。英語で外国の人と話すことの喜びを知るにつれ、言葉の背後にある文化や価値観にも強い関心を抱くようになりました。高校時代にニュージーランドへ10か月間留学した際には、共通の言語（英語）で話していても、国籍や背景の違う人々の間には微妙な価値観の差があることを肌で感じました。互いの違いを丁寧に尊重することで初めて信頼関係が生まれると学んだこの経験は、CAという職業への志望を一層深めました。</p>
+    <p>高1のオープンキャンパスで在学生の話を聞き、貴学英米文学科ではコミュニケーション・文学・文化・英語教育学の4領域を横断しながら学べることを知りました。また、IEプログラムを通じて少人数で実践的な英語力を伸ばせる環境が整っている点は、高い英語運用能力が求められるCAを目指す私にとって、他大学にはない大きな魅力です。入学後は異文化間コミュニケーション論を中心に学修し、英語圏の価値観と日本の文化の双方を深く理解したうえで、両者を橋渡しできる人材を目指したいと考えています。</p>
+    <p>大学での学びとサークル活動・留学経験を組み合わせ、卒業時には高水準の英語運用能力と異文化理解力を身につけ、国際線CAとして日本社会の代表者として誇りを持って世界に出たいと考えています。</p>
+  </div>
+  <div class="word-count" id="countB"></div>
+  <button class="copy-btn c2" onclick="copyText('textB', this)">📋 このパターンの本文をコピーする</button>
+  <div class="copied-msg" id="msgB"></div>
+</div>
+
+<!-- Panel C -->
+<div class="panel" id="panel3">
+  <div class="panel-header">
+    <div class="panel-badge b3">C</div>
+    <div>
+      <div class="panel-title">学術的関心×社会貢献を結びつける知的探究型</div>
+      <div class="panel-sub">「異文化間コミュニケーション」という研究テーマから出発し、アドミッションポリシーとの整合性を高める構成</div>
+    </div>
+  </div>
+  <div class="strategy-box s3">
+    <strong>📌 この型が有効な場面</strong>
+    学術的な関心の深さをアピールしたいとき。青学のAP（異文化共生・社会貢献）と直接つなげることで、「この大学・この学科でなければならない理由」を強く打ち出せる。
+  </div>
+  <div class="essay" id="textC">
+    <p>英語という共通言語で会話していても、国籍や文化背景が異なる人々の間には価値観の微妙なずれが存在します。そのずれをどのように理解し、どう乗り越えるかという問いが、私を貴学英米文学科へと導きました。</p>
+    <p>高校時代のニュージーランドへの10か月間の留学は、この問いを生んだ原体験です。英語でコミュニケーションを取りながら、自分の意見を率直に伝えることの重要性を学んだ一方で、文化の壁に阻まれ、相手の感情や意図を誤解してしまう場面を何度も経験しました。その度に、言語の正確さだけでなく文化的背景への理解が不可欠だと感じました。帰国後、この経験をさらに深めたいという思いから、英語の学習を続けながら異文化間の対話に関する関心を深めてきました。</p>
+    <p>貴学英米文学科のアドミッション・ポリシーには「生活や文化・価値観・考え方の違う世界の人々との共生を通じて社会に貢献する」という理念が掲げられており、私の問い意識と深く共鳴しています。入学後は「異文化間コミュニケーション論」を中心に、英語圏の言語・文化・文学を横断的に学び、価値観の異なる人々の間に生じるすれ違いがどのような要因から生まれるのかを探究したいと考えています。また、IEプログラムで少人数の実践的環境に身を置き、議論・表現・思考の訓練を積むことで、自らの英語運用能力を学術レベルに引き上げることも目標の一つです。</p>
+    <p>将来は国際線CAとして多様な背景を持つ人々と向き合い、大学で培った異文化理解の視点を活かして国と国の間にあるギャップを縮める存在になりたいと考えています。貴学での学びを、その出発点にしたいと考えています。</p>
+  </div>
+  <div class="word-count" id="countC"></div>
+  <button class="copy-btn c3" onclick="copyText('textC', this)">📋 このパターンの本文をコピーする</button>
+  <div class="copied-msg" id="msgC"></div>
+</div>
+
+<footer>
+  Draft for 大西 花 ｜ 青山学院大学 自己推薦入学者選抜 2026<br>
+  ※ 今後も少しづつ添削・修正を続けていきましょう！
+</footer>
+
+<script>
+function switchTab(n) {
+  [1,2,3].forEach(i => {
+    document.getElementById('panel' + i).classList.toggle('active', i === n);
+    document.querySelectorAll('.tab-btn')[i-1].classList.toggle('active', i === n);
+  });
+}
+
+function countChars(id) {
+  const el = document.getElementById(id);
+  const text = el.innerText || el.textContent;
+  return text.replace(/\s/g,'').length;
+}
+
+function updateCounts() {
+  ['A','B','C'].forEach(k => {
+    const id = 'text' + k;
+    const n = countChars(id);
+    const el = document.getElementById('count' + k);
+    if (el) el.textContent = '文字数（空白除く）：約 ' + n + ' 字';
+  });
+}
+
+function copyText(id, btn) {
+  const el = document.getElementById(id);
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text.trim()).then(() => {
+    const key = id.replace('text','');
+    const msg = document.getElementById('msg' + key);
+    if (msg) { msg.textContent = 'コピーしました ✓'; setTimeout(() => { msg.textContent = ''; }, 2500); }
+  }).catch(() => {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+  });
+}
+
+window.addEventListener('DOMContentLoaded', updateCounts);
+</script>
+</body>
+</html>
