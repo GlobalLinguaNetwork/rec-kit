@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>志願理由書 3パターン｜吉村 美空｜神田外語大学 外国語学部</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1c1c2e;
+    --muted: #5e5e78;
+    --bg: #f0ede8;
+    --white: #fffefa;
+    --border: #d5cfc5;
+    --a: #3a6b5f;
+    --b: #5a4a7a;
+    --c: #7a3f3f;
+    --a-lt: #eaf2f0;
+    --b-lt: #eeebf5;
+    --c-lt: #f5eaea;
+    --gold: #b8955a;
+    --gold-lt: #f7f0e4;
+    --accent: #2b5566;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 14px;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 26px 20px 20px;
+    text-align: center;
+  }
+  .h-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(14px, 3.8vw, 19px);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+  header .h-sub {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 6px;
+  }
+
+  /* ===== NOTICE ===== */
+  .notice {
+    background: #e8f4f8;
+    border-left: 4px solid var(--accent);
+    margin: 14px 14px 0;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    color: #2b4555;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.75;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .notice strong { color: var(--accent); }
+
+  /* ===== SECTION NAV ===== */
+  .section-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 14px 14px 0;
+  }
+  .sec-btn {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 130px;
+    padding: 9px 8px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.18s;
+    line-height: 1.5;
+  }
+  .sec-btn.active {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--white);
+    font-weight: 500;
+  }
+  .sec-btn .sn { font-size: 10px; opacity: 0.7; display: block; }
+
+  /* ===== SECTION PANEL ===== */
+  .section-panel {
+    display: none;
+    padding: 14px;
+  }
+  .section-panel.active { display: block; }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .section-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  /* ===== PATTERN TABS ===== */
+  .ptabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0;
+  }
+  .ptab {
+    flex: 1;
+    padding: 9px 4px;
+    border: none;
+    border-radius: 7px 7px 0 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.55;
+    transition: opacity 0.18s;
+    line-height: 1.4;
+  }
+  .ptab.pa { background: var(--a); }
+  .ptab.pb { background: var(--b); }
+  .ptab.pc { background: var(--c); }
+  .ptab.active { opacity: 1; }
+
+  /* ===== PATTERN PANEL ===== */
+  .ppanel {
+    display: none;
+    background: var(--white);
+    border-radius: 0 0 8px 8px;
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 18px 16px 22px;
+  }
+  .ppanel.active { display: block; }
+
+  .pp-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pp-badge {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 13px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .ba { background: var(--a); }
+  .bb { background: var(--b); }
+  .bc { background: var(--c); }
+
+  .pp-title { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .pp-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .strategy {
+    padding: 10px 12px;
+    border-radius: 5px;
+    font-size: 11.5px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .sa { background: var(--a-lt); border-left: 3px solid var(--a); }
+  .sb { background: var(--b-lt); border-left: 3px solid var(--b); }
+  .sc { background: var(--c-lt); border-left: 3px solid var(--c); }
+  .strategy strong { display: block; margin-bottom: 3px; font-size: 11.5px; }
+
+  .essay {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14.5px;
+    line-height: 2;
+    color: var(--ink);
+  }
+  .essay p { margin-bottom: 1.2em; text-indent: 1em; }
+  .essay p:last-child { margin-bottom: 0; }
+
+  /* short answer style */
+  .ans-block { margin-bottom: 0; }
+  .ans-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+
+  .wordcount {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-size: 11.5px;
+    color: var(--muted);
+    text-align: right;
+    font-weight: 600;
+  }
+
+  .copy-btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 11px;
+    border-radius: 6px;
+    background: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-weight: 500;
+  }
+  .ca { color: var(--a); border: 1.5px solid var(--a); }
+  .cb { color: var(--b); border: 1.5px solid var(--b); }
+  .cc { color: var(--c); border: 1.5px solid var(--c); }
+  .ca:hover { background: var(--a); color: #fff; }
+  .cb:hover { background: var(--b); color: #fff; }
+  .cc:hover { background: var(--c); color: #fff; }
+
+  .copied-msg { text-align: center; font-size: 11px; color: var(--muted); margin-top: 6px; height: 16px; }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 20px 14px;
+    line-height: 1.9;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-label">Statement of Purpose · Draft</div>
+  <h1>神田外語大学 外国語学部<br>志願理由書</h1>
+  <div class="h-sub">吉村 美空 ／ 各項目 3パターン比較ドラフト</div>
+</header>
+
+<!-- ===== SECTION NAV ===== -->
+<div class="section-nav">
+  <button class="sec-btn active" onclick="showSection('s1')">
+    <span class="sn">メイン項目（1000〜1200字）</span>① 志願理由
+  </button>
+  <button class="sec-btn" onclick="showSection('s2')">
+    <span class="sn">サブ項目（面接・準備用）</span>② 将来の進路希望
+  </button>
+  <button class="sec-btn" onclick="showSection('s3')">
+    <span class="sn">サブ項目（面接・準備用）</span>③ 自分が優れていること
+  </button>
+  <button class="sec-btn" onclick="showSection('s4')">
+    <span class="sn">サブ項目（面接・準備用）</span>④ 好きな教科とその理由
+  </button>
+  <button class="sec-btn" onclick="showSection('s5')">
+    <span class="sn">サブ項目（面接・準備用）</span>⑤ 趣味・特技・資格
+  </button>
+  <button class="sec-btn" onclick="showSection('s6')">
+    <span class="sn">サブ項目（面接・準備用）</span>⑥ 特記事項
+  </button>
+</div>
+
+<!-- ===== S1: 志願理由 ===== -->
+<div class="section-panel active" id="s1">
+  <div class="section-title">① 志願理由（指定文字数：1000字以上〜1200字以下）</div>
+  <div class="section-note">大学の特長（ダブルメジャー制度・MULC・実践的な環境）と吉村さんの原体験（オーストラリア・ニュース・NGO目標）をリンクさせています。</div>
+
+  <div class="ptabs" id="tabs_s1">
+    <button class="ptab pa active" onclick="switchPat('s1',1)">パターンA<br>社会課題解決・NGO軸</button>
+    <button class="ptab pb" onclick="switchPat('s1',2)">パターンB<br>異文化・言語探究軸</button>
+    <button class="ptab pc" onclick="switchPat('s1',3)">パターンC<br>実践的行動・留学軸</button>
+  </div>
+
+  <!-- A -->
+  <div class="ppanel active" id="s1_p1">
+    <div class="pp-header">
+      <div class="pp-badge ba">A</div>
+      <div>
+        <div class="pp-title">社会課題解決・NGO軸（王道アプローチ）</div>
+        <div class="pp-sub">中南米の貧困問題と原体験を起点に、外国語学部のカリキュラムと結びつける</div>
+      </div>
+    </div>
+    <div class="strategy sa">
+      <strong>📌 このパターンの特徴</strong>
+      NGO職員として「貧困問題を解決する」という明確なゴールに向け、外国語学部の強みである「ダブルメジャー制度（英語＋スペイン語）」がいかに必要であるかを論理的に展開しています。
+    </div>
+    <div class="essay" id="s1_t1">
+      <p>私が神田外語大学外国語学部を志望する理由は、高度な語学力と幅広い教養を身につけ、将来NGOの職員として中南米の貧困問題解決に直接貢献したいからです。原点は、オーストラリアで路上生活をするホームレスの方々を目の当たりにしたことと、ニュースで中南米の深刻な貧困問題を知ったことにあります。世界にはSDGsの目標が達成されず、過酷な環境で苦しむ人々が数多く存在します。私は「何か問題を解決したい」「現地で困っている人を直接支援したい」という強い使命感を抱きました。そのためには、中南米で広く話されるスペイン語を習得し、現地の人々の生の声を聞き取り、心を通わせることが不可欠です。</p>
+      <p>数ある大学の中で貴学の外国語学部を志望する理由は、実践的なコミュニケーション能力を鍛える圧倒的な環境が整っているからです。貴学は、専攻言語のスペイン語に加えて英語も同時に学ぶ「ダブルメジャー制度」を採用しており、国際的な支援活動に不可欠な二言語を高度に習得できる点に魅力を感じています。また、オープンキャンパスで先輩が「その場にいると、自分しかわからないこともある」「自分の意見をしっかり伝えたい」と熱く語る姿に深く感銘を受けました。机上の学習にとどまらず、少人数制の授業やMULC（多言語コミュニケーションセンター）などの施設を活用し、ネイティブ教員と日常的に対話して自らの意見を発信できる実践的な環境は、現場主義を貫きたい私の目標と完全に一致しています。</p>
+      <p>高校生活では、学業において英語学習に最も力を注ぎました。毎日欠かさず単語の暗記を継続した結果、少しずつ英文の構造や意味が理解できるようになり、地道な努力が成果に結びつく言語学習の喜びを実感しました。さらに、課外活動としてダンスに情熱を持って取り組みました。好きなことだからこそ、困難な練習や壁にぶつかっても決して諦めずに乗り越えてきました。また、チームで作品を作り上げる中で、常に周りの状況を的確に見渡し、仲間への気遣いを忘れずに皆を笑顔にする協調性を培いました。この「粘り強さ」と「多様な人と良好な関係を築く力」は、異文化の環境で困難な社会問題に立ち向かう際に私の最大の武器になると確信しています。</p>
+      <p>入学後は、貴学の恵まれた環境を最大限に活かし、スペイン語と英語の運用能力を徹底的に磨き上げるとともに、外国語学部ならではの教養科目を通して中南米の社会や文化に対する深い理解を養いたいです。そして在学中に必ずスペイン語圏への留学に挑戦し、現地の社会課題を自分の目で確かめます。卒業後はNGOの職員として、貴学で得た語学力と国際感覚を武器に、一人でも多くの困っている人々を直接助け、より良い世界の実現に向けて尽力したいと強く決意しています。</p>
+    </div>
+    <div class="wordcount" id="s1_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s1_t1','s1_m1')">📋 パターンAの本文をコピー</button>
+    <div class="copied-msg" id="s1_m1"></div>
+  </div>
+
+  <!-- B -->
+  <div class="ppanel" id="s1_p2">
+    <div class="pp-header">
+      <div class="pp-badge bb">B</div>
+      <div>
+        <div class="pp-title">異文化コミュニケーション・言語探究軸</div>
+        <div class="pp-sub">言語をコミュニケーションツールと捉え、困難を乗り越える力をアピール</div>
+      </div>
+    </div>
+    <div class="strategy sb">
+      <strong>📌 このパターンの特徴</strong>
+      「コミュニケーションを通じて人を助けたい」という情熱を軸に、高校での英語学習やダンスでの協調性を、外国語学部の少人数制・MULCでの学びに結びつけています。
+    </div>
+    <div class="essay" id="s1_t2">
+      <p>私が神田外語大学外国語学部を志望する理由は、言語という強力なツールを武器に、中南米の貧困問題をはじめとする国際的な社会課題の解決に挑みたいからです。高校生活で私は英語学習に最も力を入れました。毎日コツコツと英単語を覚えることで、次第に長文が理解できるようになり、言語を通じて新しい知識や世界観を得る楽しさを実感しました。この経験から、言語を単なる学問ではなく、相手の心を理解し人と人とをつなぐ手段として深く学びたいと考えました。一方で、ニュースで中南米の深刻な貧困問題を知り、オーストラリアでホームレスの方々を目にしたことで、世界に存在する貧困や格差の現実を痛感しました。「SDGsの目標が達成されていない社会で、自分に何ができるか」を考えた結果、「直接現地に赴き、自分の言葉で対話して困っている人を助けたい」という目標に辿り着きました。</p>
+      <p>そのためには、中南米で広く話されるスペイン語を実践レベルで習得し、支援を要する人々の生の声を聞き取る力が必要です。貴学の外国語学部を第一志望とする最大の決め手は、語学を「生きたツール」として使いこなす圧倒的な学習環境です。オープンキャンパスで、先輩が「その場にいると自分しかわからないこともある」「自分の意見をしっかり伝えたい」と力強く語る姿に心を打たれました。教室での学びに留まらず、現場で対等に意見を交わせる実践力を重んじる貴学の姿勢に深く共感しました。外国語学部ならではの「英語と専攻言語のダブルメジャー制度」に加え、少人数制クラスや、MULC（多言語コミュニケーションセンター）での日常的なコミュニケーションを通じ、国際社会で通用する高度な語学力と異文化理解力を身につけたいです。</p>
+      <p>私の強みは、ダンス活動を通じて培われた「困難を乗り越える力」と「周囲を見渡す協調性」です。大好きなことだからこそ、厳しい練習にも諦めずに立ち向かえました。また、チームで作品を作り上げる過程で、メンバーへの気遣いを忘れず、常に周囲を楽しませるコミュニケーション能力を養いました。この強みは、言葉も文化も異なる海外の環境に飛び込み、多様な人々と協力して支援プロジェクトを進める際に必ず大きな力になると信じています。</p>
+      <p>入学後は、語学力はもちろん、中南米の文化や歴史、国際社会の課題に関する専門的な教養を積極的に吸収します。在学中にはスペイン語圏への留学に挑戦し、自分の目で現地の環境を見つめ、人々が直面する課題を直接聞いて学びを深めます。卒業後はNGO職員として、SDGs達成に向けて現場で汗を流し、世界中の困っている人々を直接助けるグローバルな人材になりたいと強く願っています。</p>
+    </div>
+    <div class="wordcount" id="s1_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s1_t2','s1_m2')">📋 パターンBの本文をコピー</button>
+    <div class="copied-msg" id="s1_m2"></div>
+  </div>
+
+  <!-- C -->
+  <div class="ppanel" id="s1_p3">
+    <div class="pp-header">
+      <div class="pp-badge bc">C</div>
+      <div>
+        <div class="pp-title">実践的探究・行動力（留学重視）軸</div>
+        <div class="pp-sub">ダンスで培った行動力をベースに、現地での留学体験と実践を重視する</div>
+      </div>
+    </div>
+    <div class="strategy sc">
+      <strong>📌 このパターンの特徴</strong>
+      「自ら行動して確かめる」というアクティブな姿勢を強調し、ダブルメジャー制度による実践的な語学力向上と留学の必然性を力強くアピールしています。
+    </div>
+    <div class="essay" id="s1_t3">
+      <p>私が神田外語大学外国語学部を志望する理由は、自らの足で現地に赴き、実践的な語学力を用いて中南米の貧困問題を解決する「行動する支援者」になりたいからです。私はこれまで、体を動かし実践を通じて学ぶ姿勢を大切にしてきました。高校生活で最も情熱を注いだダンス活動では、個人の技術を磨くだけでなく、チーム全体を見て周囲への気遣いを忘れずに取り組んできました。困難な壁にぶつかった時も逃げずに乗り越え、瞬時の判断力や周りを楽しませる力を養いました。この「行動力」と「周囲を巻き込む力」は、誰にも負けない最大の長所です。</p>
+      <p>将来、国際的な支援活動に関わりたいと考えた原点は、オーストラリアで出会ったホームレスの方々の姿と、ニュースで知った中南米の貧困問題です。世界にはSDGsの目標が達成されず、支援を待つ人々が数多くいます。私は「何か問題を解決したい」「実際に困っている人を助ける活動がしたい」という強い衝動に駆られました。そのためには机上の空論ではなく、自分の目で現地の環境を見つめ、人々の生の声を直接聞き取ることが不可欠だと考えました。中南米の人々の生きた言葉であるスペイン語を習得することは、彼らの心に寄り添い、真の支援を行うための最も重要な鍵となります。</p>
+      <p>貴学の外国語学部を志望する最大の理由は、オープンキャンパスで実感した「実践的な生きた言語」を学べる環境です。先輩の「その場にいると自分しかわからないこともある」「自分の意見をしっかり伝えたい」という言葉が心に強く響きました。それは私が求めている「現地で自分の言葉を使って行動する」姿勢そのものです。外国語学部のダブルメジャー制度により、スペイン語と英語の両方を高度に操る力を身につけられる点に魅力を感じています。また、少人数制クラスや、MULCを活用した日常的な会話演習の環境は、将来国際協力の最前線で言語を武器にするための強靭な基礎を築いてくれると確信しています。高校では英語学習に力を入れ、毎日の単語暗記で「継続力」と言語を学ぶ楽しさを身につけました。この粘り強さを貴学での学びに活かします。</p>
+      <p>入学後は、教室での語学学習に留まらず、社会問題というテーマを幅広く探究します。在学中には必ずスペイン語圏への留学を実現させ、現地の環境に直接身を置き、人々が直面する問題を自分の目と耳で確かめる決意です。卒業後は、貴学で培った実践的な語学力と国際教養、そして持ち前の行動力を活かし、NGOのスタッフとして国際社会に貢献します。現場で困っている人々に直接寄り添い、自らの手で助けることができる人材として、より良い未来に向けて挑戦し続けたいです。</p>
+    </div>
+    <div class="wordcount" id="s1_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s1_t3','s1_m3')">📋 パターンCの本文をコピー</button>
+    <div class="copied-msg" id="s1_m3"></div>
+  </div>
+</div><!-- /s1 -->
+
+<!-- ===== S2〜S6 サブ項目 ===== -->
+<!-- 以下は面接やその他の書類作成の際の参考用としてお使いください。 -->
+
+<div class="section-panel" id="s2">
+  <div class="section-title">② 将来の進路希望（準備用メモ）</div>
+  <div class="ptabs" id="tabs_s2">
+    <button class="ptab pa active" onclick="switchPat('s2',1)">パターンA</button>
+    <button class="ptab pb" onclick="switchPat('s2',2)">パターンB</button>
+    <button class="ptab pc" onclick="switchPat('s2',3)">パターンC</button>
+  </div>
+  <div class="ppanel active" id="s2_p1">
+    <div class="ans-block"><div class="ans-text" id="s2_t1">　卒業後は国際NGOの職員となり、中南米を中心とした貧困問題の解決に貢献したいと考えています。外国語学部で培う英語とスペイン語のダブルメジャーを活かし、最前線で困っている人を直接支援できる活動に取り組みたいです。</div></div>
+    <button class="copy-btn ca" onclick="copyText('s2_t1','s2_m1')">📋 コピーする</button>
+    <div class="copied-msg" id="s2_m1"></div>
+  </div>
+  <div class="ppanel" id="s2_p2">
+    <div class="ans-block"><div class="ans-text" id="s2_t2">　語学力を活かし、将来は国際協力分野、特にNGOでの支援活動に携わりたいです。中南米の国々が抱える社会課題に対して、直接現地に赴いて問題解決を図り、世界中の人々が安心して暮らせる社会づくりに貢献することが目標です。</div></div>
+    <button class="copy-btn cb" onclick="copyText('s2_t2','s2_m2')">📋 コピーする</button>
+    <div class="copied-msg" id="s2_m2"></div>
+  </div>
+  <div class="ppanel" id="s2_p3">
+    <div class="ans-block"><div class="ans-text" id="s2_t3">　NGOなどの国際組織に所属し、貧困や格差といった社会問題の解決に取り組む支援者になることが目標です。語学を用いて現地の人々の生の声をすくい上げ、持ち前の明るさで支援現場の人々を笑顔にできる存在になりたいです。</div></div>
+    <button class="copy-btn cc" onclick="copyText('s2_t3','s2_m3')">📋 コピーする</button>
+    <div class="copied-msg" id="s2_m3"></div>
+  </div>
+</div>
+
+<div class="section-panel" id="s3">
+  <div class="section-title">③ 自分が特に優れていると思っていること（準備用メモ）</div>
+  <div class="ptabs" id="tabs_s3">
+    <button class="ptab pa active" onclick="switchPat('s3',1)">パターンA</button>
+    <button class="ptab pb" onclick="switchPat('s3',2)">パターンB</button>
+    <button class="ptab pc" onclick="switchPat('s3',3)">パターンC</button>
+  </div>
+  <div class="ppanel active" id="s3_p1">
+    <div class="ans-block"><div class="ans-text" id="s3_t1">　私が特に優れていると感じる点は、周囲の状況をしっかりと見て、みんなへの気遣いが自然にできる力です。相手の立場に立って考え、場を明るく楽しませることができます。この長所は多様な価値観を持つ人々と協働する際に活きると確信しています。</div></div>
+    <button class="copy-btn ca" onclick="copyText('s3_t1','s3_m1')">📋 コピーする</button>
+    <div class="copied-msg" id="s3_m1"></div>
+  </div>
+  <div class="ppanel" id="s3_p2">
+    <div class="ans-block"><div class="ans-text" id="s3_t2">　どんな困難な状況でも、自分の決めたことに対しては諦めずに乗り越えられる力です。高校のダンス活動では、厳しい練習の中でも瞬時に状況を判断し、周囲を見渡してチーム全体をまとめる力を養いました。</div></div>
+    <button class="copy-btn cb" onclick="copyText('s3_t2','s3_m2')">📋 コピーする</button>
+    <div class="copied-msg" id="s3_m2"></div>
+  </div>
+  <div class="ppanel" id="s3_p3">
+    <div class="ans-block"><div class="ans-text" id="s3_t3">　常に周りを見て気遣いを忘れず、その場にいる人を楽しませるコミュニケーション力です。初対面の人や言語が異なる環境であっても、物怖じせずに自分から積極的に関わっていくことができます。</div></div>
+    <button class="copy-btn cc" onclick="copyText('s3_t3','s3_m3')">📋 コピーする</button>
+    <div class="copied-msg" id="s3_m3"></div>
+  </div>
+</div>
+
+<div class="section-panel" id="s4">
+  <div class="section-title">④ 好きな教科・科目とその理由（準備用メモ）</div>
+  <div class="ptabs" id="tabs_s4">
+    <button class="ptab pa active" onclick="switchPat('s4',1)">パターンA</button>
+    <button class="ptab pb" onclick="switchPat('s4',2)">パターンB</button>
+    <button class="ptab pc" onclick="switchPat('s4',3)">パターンC</button>
+  </div>
+  <div class="ppanel active" id="s4_p1">
+    <div class="ans-block"><div class="ans-text" id="s4_t1">　最も力を入れてきた科目は英語です。毎日コツコツと単語学習を継続した結果、少しずつ英文がわかるようになり、言語を理解する楽しさを実感しました。この経験は、大学での新たな言語学習においても大きな自信になります。</div></div>
+    <button class="copy-btn ca" onclick="copyText('s4_t1','s4_m1')">📋 コピーする</button>
+    <div class="copied-msg" id="s4_m1"></div>
+  </div>
+  <div class="ppanel" id="s4_p2">
+    <div class="ans-block"><div class="ans-text" id="s4_t2">　好きな科目は英語です。単語の暗記から始まり、文が読めるようになるにつれて、言葉を通じて異なる文化に触れられる喜びを知りました。この語学の面白さが、外国語学部で二つの言語を極めたいという思いに繋がっています。</div></div>
+    <button class="copy-btn cb" onclick="copyText('s4_t2','s4_m2')">📋 コピーする</button>
+    <div class="copied-msg" id="s4_m2"></div>
+  </div>
+  <div class="ppanel" id="s4_p3">
+    <div class="ans-block"><div class="ans-text" id="s4_t3">　英語学習に最も力を入れてきました。単語学習を諦めずに継続したことで、長文の内容を理解できるようになりました。言葉の壁を越えて自分の思いを伝える力をつけることが、社会問題解決の第一歩になると考えています。</div></div>
+    <button class="copy-btn cc" onclick="copyText('s4_t3','s4_m3')">📋 コピーする</button>
+    <div class="copied-msg" id="s4_m3"></div>
+  </div>
+</div>
+
+<div class="section-panel" id="s5">
+  <div class="section-title">⑤ 趣味・特技・有している資格（準備用メモ）</div>
+  <div class="ptabs" id="tabs_s5">
+    <button class="ptab pa active" onclick="switchPat('s5',1)">パターンA</button>
+    <button class="ptab pb" onclick="switchPat('s5',2)">パターンB</button>
+    <button class="ptab pc" onclick="switchPat('s5',3)">パターンC</button>
+  </div>
+  <div class="ppanel active" id="s5_p1">
+    <div class="ans-block"><div class="ans-text" id="s5_t1">　趣味は体を動かすことです。特技は長年続けているダンスで、どんな困難な練習にも挫けずに向き合い、乗り越えてきました。ダンスを通じて身につけた、瞬時の判断力と、周囲への気遣いを忘れずチームを明るくする力には自信があります。</div></div>
+    <button class="copy-btn ca" onclick="copyText('s5_t1','s5_m1')">📋 コピーする</button>
+    <div class="copied-msg" id="s5_m1"></div>
+  </div>
+  <div class="ppanel" id="s5_p2">
+    <div class="ans-block"><div class="ans-text" id="s5_t2">　体を動かすこと、特にダンスが趣味であり特技です。チームで踊る中で、自分だけでなく周りのメンバーの動きや状況をしっかりと見る力を養いました。好きなことにはとことん打ち込め、最後までやり遂げることができます。</div></div>
+    <button class="copy-btn cb" onclick="copyText('s5_t2','s5_m2')">📋 コピーする</button>
+    <div class="copied-msg" id="s5_m2"></div>
+  </div>
+  <div class="ppanel" id="s5_p3">
+    <div class="ans-block"><div class="ans-text" id="s5_t3">　趣味は体を動かすことで、特技はダンスです。ダンスの練習を通じて、精神的な忍耐力と、周囲を見て素早く判断する力を鍛えてきました。常に笑顔で周りへの気遣いを忘れず、どんな環境でもその場を盛り上げることができます。</div></div>
+    <button class="copy-btn cc" onclick="copyText('s5_t3','s5_m3')">📋 コピーする</button>
+    <div class="copied-msg" id="s5_m3"></div>
+  </div>
+</div>
+
+<div class="section-panel" id="s6">
+  <div class="section-title">⑥ 上記以外の特記事項（準備用メモ）</div>
+  <div class="ptabs" id="tabs_s6">
+    <button class="ptab pa active" onclick="switchPat('s6',1)">パターンA</button>
+    <button class="ptab pb" onclick="switchPat('s6',2)">パターンB</button>
+    <button class="ptab pc" onclick="switchPat('s6',3)">パターンC</button>
+  </div>
+  <div class="ppanel active" id="s6_p1">
+    <div class="ans-block"><div class="ans-text" id="s6_t1">　大学在学中には必ず留学に挑戦したいと考えています。ニュースで知った社会問題や、オーストラリアで見たホームレスの方々の現状など、遠くからではわからない現地のリアルな環境を自分の目と耳で直接確かめに行きたいです。</div></div>
+    <button class="copy-btn ca" onclick="copyText('s6_t1','s6_m1')">📋 コピーする</button>
+    <div class="copied-msg" id="s6_m1"></div>
+  </div>
+  <div class="ppanel" id="s6_p2">
+    <div class="ans-block"><div class="ans-text" id="s6_t2">　貴学のオープンキャンパスで先輩方が語った「その場にいると、自分しかわからないこともある」「自分の意見をしっかり伝えたい」という言葉に強く背中を押されました。この言葉を胸に、自分にしかできない支援の形を探究したいです。</div></div>
+    <button class="copy-btn cb" onclick="copyText('s6_t2','s6_m2')">📋 コピーする</button>
+    <div class="copied-msg" id="s6_m2"></div>
+  </div>
+  <div class="ppanel" id="s6_p3">
+    <div class="ans-block"><div class="ans-text" id="s6_t3">　私は、社会問題に対してただ気にかけるだけでなく、自ら行動を起こせる人間になりたいです。原体験を原動力に、貴学の外国語学部における実践的な環境の中で、自らの意見をしっかり伝えられるよう成長したいです。</div></div>
+    <button class="copy-btn cc" onclick="copyText('s6_t3','s6_m3')">📋 コピーする</button>
+    <div class="copied-msg" id="s6_m3"></div>
+  </div>
+</div>
+
+<footer>
+  Draft for 吉村 美空 ｜ 神田外語大学 外国語学部<br>
+  ※ ご自身の言葉で最終確認し、提出用の書類に落とし込んでください。<br>
+</footer>
+
+<script>
+// ---- Section nav ----
+function showSection(id) {
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sec-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx =['s1','s2','s3','s4','s5','s6'].indexOf(id);
+  document.querySelectorAll('.sec-btn')[idx].classList.add('active');
+}
+
+// ---- Pattern tabs ----
+function switchPat(sec, n) {
+  const tabs = document.querySelectorAll('#tabs_' + sec + ' .ptab');
+  tabs.forEach((t,i) => t.classList.toggle('active', i === n-1));[1,2,3].forEach(i => {
+    const p = document.getElementById(sec + '_p' + i);
+    if (p) p.classList.toggle('active', i === n);
+  });
+}
+
+// ---- Copy ----
+function copyText(textId, msgId) {
+  const el = document.getElementById(textId);
+  const text = (el.innerText || el.textContent).trim();
+  navigator.clipboard.writeText(text).then(() => {
+    showMsg(msgId);
+  }).catch(() => {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    showMsg(msgId);
+  });
+}
+function showMsg(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = 'コピーしました ✓';
+  setTimeout(() => { el.textContent = ''; }, 2500);
+}
+
+// ---- Word count ----
+function countAndSet(textId, countId) {
+  const el = document.getElementById(textId);
+  if (!el || !document.getElementById(countId)) return;
+  const n = (el.innerText || el.textContent).replace(/\s/g,'').length;
+  document.getElementById(countId).textContent = '文字数（空白除く）：約 ' + n + ' 字';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const pairs = [['s1_t1','s1_c1'],['s1_t2','s1_c2'],['s1_t3','s1_c3']];
+  pairs.forEach(([t,c]) => countAndSet(t,c));
+});
+</script>
+</body>
+</html>
