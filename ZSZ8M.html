@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>志望理由書 3パターン｜久生 椰々｜関西外国語大学 外国語学部 英米語学科</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1c1c2e;
+    --muted: #5e5e78;
+    --bg: #f0ede8;
+    --white: #fffefa;
+    --border: #d5cfc5;
+    --a: #3a6b5f;
+    --b: #5a4a7a;
+    --c: #7a3f3f;
+    --a-lt: #eaf2f0;
+    --b-lt: #eeebf5;
+    --c-lt: #f5eaea;
+    --gold: #b8955a;
+    --gold-lt: #f7f0e4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 14px;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 26px 20px 20px;
+    text-align: center;
+  }
+  .h-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(14px, 3.8vw, 19px);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+  header .h-sub {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 6px;
+  }
+
+  /* ===== NOTICE ===== */
+  .notice {
+    background: #fff9e8;
+    border-left: 3px solid var(--gold);
+    margin: 14px 14px 0;
+    padding: 10px 13px;
+    font-size: 12px;
+    color: #6b5520;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.75;
+  }
+
+  /* ===== SECTION NAV ===== */
+  .section-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 14px 14px 0;
+  }
+  .sec-btn {
+    flex: 1 1 calc(100% - 6px);
+    padding: 9px 8px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.18s;
+    line-height: 1.5;
+  }
+  .sec-btn.active {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--white);
+    font-weight: 500;
+  }
+  .sec-btn .sn { font-size: 10px; opacity: 0.7; display: block; }
+
+  /* ===== SECTION PANEL ===== */
+  .section-panel {
+    display: none;
+    padding: 14px;
+  }
+  .section-panel.active { display: block; }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .section-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  /* ===== PATTERN TABS ===== */
+  .ptabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0;
+  }
+  .ptab {
+    flex: 1;
+    padding: 9px 4px;
+    border: none;
+    border-radius: 7px 7px 0 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.55;
+    transition: opacity 0.18s;
+    line-height: 1.4;
+  }
+  .ptab.pa { background: var(--a); }
+  .ptab.pb { background: var(--b); }
+  .ptab.pc { background: var(--c); }
+  .ptab.active { opacity: 1; }
+
+  /* ===== PATTERN PANEL ===== */
+  .ppanel {
+    display: none;
+    background: var(--white);
+    border-radius: 0 0 8px 8px;
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 18px 16px 22px;
+  }
+  .ppanel.active { display: block; }
+
+  .pp-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pp-badge {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 13px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .ba { background: var(--a); }
+  .bb { background: var(--b); }
+  .bc { background: var(--c); }
+
+  .pp-title { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .pp-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .strategy {
+    padding: 10px 12px;
+    border-radius: 5px;
+    font-size: 11.5px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .sa { background: var(--a-lt); border-left: 3px solid var(--a); }
+  .sb { background: var(--b-lt); border-left: 3px solid var(--b); }
+  .sc { background: var(--c-lt); border-left: 3px solid var(--c); }
+  .strategy strong { display: block; margin-bottom: 3px; font-size: 11.5px; }
+
+  .essay {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14.5px;
+    line-height: 2;
+    color: var(--ink);
+  }
+
+  .wordcount {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .copy-btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 11px;
+    border-radius: 6px;
+    background: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-weight: 500;
+  }
+  .ca { color: var(--a); border: 1.5px solid var(--a); }
+  .cb { color: var(--b); border: 1.5px solid var(--b); }
+  .cc { color: var(--c); border: 1.5px solid var(--c); }
+  .ca:hover { background: var(--a); color: #fff; }
+  .cb:hover { background: var(--b); color: #fff; }
+  .cc:hover { background: var(--c); color: #fff; }
+
+  .copied-msg { text-align: center; font-size: 11px; color: var(--muted); margin-top: 6px; height: 16px; }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 20px 14px;
+    line-height: 1.9;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-label">Statement of Purpose · Draft</div>
+  <h1>関西外国語大学 外国語学部<br>英米語学科　公募制推薦入試<br>志望理由書（Web入力）</h1>
+  <div class="h-sub">久生 椰々 ／ 200文字制限 3パターン比較ドラフト</div>
+</header>
+
+<div class="notice">
+  ⚠️ 関西外大の公募制推薦におけるWeb入力用の志望理由です。「200文字以内」という非常に短い制限の中で、作成シートから抽出した「なぜ関西外大か」「何を学びたいか」「将来の目標」を端的にまとめています。
+</div>
+
+<!-- ===== SECTION NAV ===== -->
+<div class="section-nav">
+  <button class="sec-btn active" onclick="showSection('s1')">
+    <span class="sn">Web出願時入力</span>志望理由（200文字以内）
+  </button>
+</div>
+
+<!-- ===== S1: 志望理由 ===== -->
+<div class="section-panel active" id="s1">
+  <div class="section-title">志望理由（大学入学希望理由書）</div>
+  <div class="section-note">200文字以内。改行は文字数や見栄えに影響するため、Web入力時は段落を分けずに一息で記述するのが一般的です。</div>
+
+  <div class="ptabs" id="tabs_s1">
+    <button class="ptab pa active" onclick="switchPat('s1',1)">パターンA<br>ホスピタリティ・実践軸</button>
+    <button class="ptab pb" onclick="switchPat('s1',2)">パターンB<br>自己成長・対人スキル軸</button>
+    <button class="ptab pc" onclick="switchPat('s1',3)">パターンC<br>異文化理解・理念共感軸</button>
+  </div>
+
+  <!-- A -->
+  <div class="ppanel active" id="s1_p1">
+    <div class="pp-header">
+      <div class="pp-badge ba">A</div>
+      <div>
+        <div class="pp-title">ホスピタリティ・実践軸（シートQ1, 6, 8, 13重視）</div>
+        <div class="pp-sub">NZでの経験から、大学のプログラム（インターン等）の魅力へ直結させる構成</div>
+      </div>
+    </div>
+    <div class="strategy sa">
+      <strong>📌 この型が有効な場面</strong>
+      「関西外大のこのプログラムだからこそ学びたい」というカリキュラムへの強い関心を示したいとき。
+    </div>
+    <div class="essay" id="s1_t1">NZ留学でホスピタリティの多様性を体感し、国ごとの「おもてなし」の違いを深く探求したいと考えた。貴学の英語で専門分野を学ぶ環境や、国内外のホテルでインターンシップを経験できる実践的なプログラムは、私の目標に最適だ。充実した留学制度を活用して多様な文化に触れ、将来はホテル業において、世界中の人々に最適なサービスと空間を提供できるプロフェッショナルとして社会に貢献したい。</div>
+    <div class="wordcount" id="s1_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s1_t1','s1_m1')">📋 パターンAの本文をコピーする</button>
+    <div class="copied-msg" id="s1_m1"></div>
+  </div>
+
+  <!-- B -->
+  <div class="ppanel" id="s1_p2">
+    <div class="pp-header">
+      <div class="pp-badge bb">B</div>
+      <div>
+        <div class="pp-title">自己成長・対人スキル軸（シートQ2, 4, 10重視）</div>
+        <div class="pp-sub">「人の輪をつなぐ」長所や、英語学習への粘り強い姿勢をアピールする構成</div>
+      </div>
+    </div>
+    <div class="strategy sb">
+      <strong>📌 この型が有効な場面</strong>
+      面接で「高校時代に頑張ったこと」や「自分の長所」から話を広げていきたいとき。
+    </div>
+    <div class="essay" id="s1_t2">「誰一人取り残さず輪をつなぐ」という私の長所を活かし、将来はホテル業で多様な背景を持つ人々に最高のサービスを提供したい。高校では恥を恐れず質問し英語力向上に努めた。貴学の高度な英語運用能力を養う環境と充実した留学制度のもとで実践的な語学力を磨きたい。また、国内外のホテルでのインターンを通じて多角的なホスピタリティを研究し、国境を越えて人々の心を豊かにする人材になりたい。</div>
+    <div class="wordcount" id="s1_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s1_t2','s1_m2')">📋 パターンBの本文をコピーする</button>
+    <div class="copied-msg" id="s1_m2"></div>
+  </div>
+
+  <!-- C -->
+  <div class="ppanel" id="s1_p3">
+    <div class="pp-header">
+      <div class="pp-badge bc">C</div>
+      <div>
+        <div class="pp-title">異文化理解・理念共感軸（シートQ1, 11, 15重視）</div>
+        <div class="pp-sub">フランス等ヨーロッパへの関心や、平和への貢献というスケールの大きな視点を示す構成</div>
+      </div>
+    </div>
+    <div class="strategy sc">
+      <strong>📌 この型が有効な場面</strong>
+      単なる職業訓練ではなく、学問としての「異文化理解・社会研究」への意欲をアピールしたいとき。
+    </div>
+    <div class="essay" id="s1_t3">NZ留学での気付きから、世界の多様なホスピタリティや異文化理解に関心を持った。貴学では英語を用いた実践的な学修に加え、フランスなどヨーロッパの文化・社会研究も深めたい。国内外のホテルでの実務経験が積めるプログラムを通じ、異なる価値観を尊重し合うおもてなしの真髄を学びたい。将来はホテル業でのサービスを通じて異文化理解の架け橋となり、平和な社会の構築に貢献したい。</div>
+    <div class="wordcount" id="s1_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s1_t3','s1_m3')">📋 パターンCの本文をコピーする</button>
+    <div class="copied-msg" id="s1_m3"></div>
+  </div>
+</div><!-- /s1 -->
+
+<footer>
+  Draft for 久生 椰々 ｜ 関西外国語大学 外国語学部 英米語学科 公募制推薦入試<br>
+  ※ 「200文字」に合わせるため、シートの要素を組み合わせて凝縮しています。最も自分らしく面接で語りやすいものを選んでください。
+</footer>
+
+<script>
+// ---- Section nav ----
+function showSection(id) {
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sec-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['s1'].indexOf(id);
+  document.querySelectorAll('.sec-btn')[idx].classList.add('active');
+}
+
+// ---- Pattern tabs ----
+function switchPat(sec, n) {
+  const tabs = document.querySelectorAll('#tabs_' + sec + ' .ptab');
+  tabs.forEach((t,i) => t.classList.toggle('active', i === n-1));
+  [1,2,3].forEach(i => {
+    const p = document.getElementById(sec + '_p' + i);
+    if (p) p.classList.toggle('active', i === n);
+  });
+}
+
+// ---- Copy ----
+function copyText(textId, msgId) {
+  const el = document.getElementById(textId);
+  const text = (el.innerText || el.textContent).trim();
+  navigator.clipboard.writeText(text).then(() => {
+    showMsg(msgId);
+  }).catch(() => {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    showMsg(msgId);
+  });
+}
+function showMsg(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = 'コピーしました ✓';
+  setTimeout(() => { el.textContent = ''; }, 2500);
+}
+
+// ---- Word count ----
+function countAndSet(textId, countId) {
+  const el = document.getElementById(textId);
+  if (!el || !document.getElementById(countId)) return;
+  const n = (el.innerText || el.textContent).replace(/\s/g,'').length;
+  document.getElementById(countId).textContent = '文字数（空白・改行除く）： ' + n + ' 字';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const pairs = [['s1_t1','s1_c1'],['s1_t2','s1_c2'],['s1_t3','s1_c3']
+  ];
+  pairs.forEach(([t,c]) => countAndSet(t,c));
+});
+</script>
+</body>
+</html>
