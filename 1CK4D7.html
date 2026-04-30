@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>志願理由書 3パターン｜福住 大地｜福井大学 医学部医学科</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1c1c2e;
+    --muted: #5e5e78;
+    --bg: #f0ede8;
+    --white: #fffefa;
+    --border: #d5cfc5;
+    --a: #1a5276;
+    --b: #1e6b4a;
+    --c: #6b3a1e;
+    --a-lt: #eaf1f8;
+    --b-lt: #e8f5f0;
+    --c-lt: #f5ede8;
+    --gold: #b8955a;
+    --accent: #1a5276;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 14px;
+  }
+
+  header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 26px 20px 20px;
+    text-align: center;
+  }
+  .h-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(14px, 3.8vw, 19px);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+  header .h-sub {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 6px;
+  }
+
+  .notice {
+    background: #e8f4f8;
+    border-left: 4px solid var(--accent);
+    margin: 14px 14px 0;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    color: #2b4555;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.75;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .notice strong { color: var(--accent); }
+
+  .section-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 14px 14px 0;
+  }
+  .sec-btn {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 140px;
+    padding: 10px 10px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.18s;
+    line-height: 1.5;
+  }
+  .sec-btn.active {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--white);
+    font-weight: 500;
+  }
+  .sec-btn .sn { font-size: 10px; opacity: 0.7; display: block; }
+
+  .section-panel {
+    display: none;
+    padding: 14px;
+  }
+  .section-panel.active { display: block; }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .section-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  .ptabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0;
+  }
+  .ptab {
+    flex: 1;
+    padding: 9px 4px;
+    border: none;
+    border-radius: 7px 7px 0 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.55;
+    transition: opacity 0.18s;
+    line-height: 1.4;
+  }
+  .ptab.pa { background: var(--a); }
+  .ptab.pb { background: var(--b); }
+  .ptab.pc { background: var(--c); }
+  .ptab.active { opacity: 1; }
+
+  .ppanel {
+    display: none;
+    background: var(--white);
+    border-radius: 0 0 8px 8px;
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 18px 16px 22px;
+  }
+  .ppanel.active { display: block; }
+
+  .pp-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pp-badge {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 13px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .ba { background: var(--a); }
+  .bb { background: var(--b); }
+  .bc { background: var(--c); }
+
+  .pp-title { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .pp-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .strategy {
+    padding: 10px 12px;
+    border-radius: 5px;
+    font-size: 11.5px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .sa { background: var(--a-lt); border-left: 3px solid var(--a); }
+  .sb { background: var(--b-lt); border-left: 3px solid var(--b); }
+  .sc { background: var(--c-lt); border-left: 3px solid var(--c); }
+  .strategy strong { display: block; margin-bottom: 3px; font-size: 11.5px; }
+
+  .essay {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14.5px;
+    line-height: 2;
+    color: var(--ink);
+  }
+  .essay p { margin-bottom: 1.2em; text-indent: 1em; }
+  .essay p:last-child { margin-bottom: 0; }
+
+  .wordcount {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-size: 11.5px;
+    color: var(--muted);
+    text-align: right;
+    font-weight: 600;
+  }
+  .warn { color: #c0392b; }
+
+  .copy-btn {
+    width: 100%;
+    margin-top: 16px;
+    padding: 11px;
+    border-radius: 6px;
+    background: transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-weight: 500;
+  }
+  .ca { color: var(--a); border: 1.5px solid var(--a); }
+  .cb { color: var(--b); border: 1.5px solid var(--b); }
+  .cc { color: var(--c); border: 1.5px solid var(--c); }
+  .ca:hover { background: var(--a); color: #fff; }
+  .cb:hover { background: var(--b); color: #fff; }
+  .cc:hover { background: var(--c); color: #fff; }
+
+  .copied-msg { text-align: center; font-size: 11px; color: var(--muted); margin-top: 6px; height: 16px; }
+
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 20px 14px;
+    line-height: 1.9;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-label">Statement of Purpose · Draft</div>
+  <h1>福井大学 医学部医学科<br>志願理由書（学校推薦型選抜Ⅱ）</h1>
+  <div class="h-sub">福住 大地 ／ 各項目 3パターン比較ドラフト</div>
+</header>
+
+<div class="notice">
+  <strong>【字数ルール】</strong>各項目 <strong>500字以内</strong>（句読点を字数に含む・空白は含まない）。目安は <strong>450〜490字</strong>。<br>
+  提出前に必ずご自身の言葉で加筆・修正し、印刷後に枠内に収まるか確認してください。
+</div>
+
+<!-- ===== SECTION NAV ===== -->
+<div class="section-nav">
+  <button class="sec-btn active" onclick="showSection('s1')">
+    <span class="sn">志願理由書（１）設問１</span>① 医学科で学びたい理由
+  </button>
+  <button class="sec-btn" onclick="showSection('s2')">
+    <span class="sn">志願理由書（１）設問２</span>② 医学・医療への適性
+  </button>
+</div>
+
+<!-- ===== S1: 医学科で学びたい理由 ===== -->
+<div class="section-panel active" id="s1">
+  <div class="section-title">① 医学科で学びたい理由（500字以内、450〜490字目安）</div>
+  <div class="section-note">「なぜ医師を目指すのか」「なぜ福井大学なのか」の二点を軸に、原体験と地域貢献への意志を結びつけています。</div>
+
+  <div class="ptabs" id="tabs_s1">
+    <button class="ptab pa active" onclick="switchPat('s1',1)">パターンA<br>原体験・ぬくもり軸</button>
+    <button class="ptab pb" onclick="switchPat('s1',2)">パターンB<br>探究・知的好奇心軸</button>
+    <button class="ptab pc" onclick="switchPat('s1',3)">パターンC<br>地域医療・貢献軸</button>
+  </div>
+
+  <!-- A -->
+  <div class="ppanel active" id="s1_p1">
+    <div class="pp-header">
+      <div class="pp-badge ba">A</div>
+      <div>
+        <div class="pp-title">原体験・ぬくもり軸（感情に訴える王道）</div>
+        <div class="pp-sub">幼少期の原体験→両親の背中→地域医療への使命感→福井大学の必然性</div>
+      </div>
+    </div>
+    <div class="strategy sa">
+      <strong>📌 このパターンの特徴</strong>
+      小さい頃に体調を崩したときに感じた医療のぬくもりを起点に、医師である両親の姿、そして地域で育てられた自分が福井の地域医療に貢献したいという流れを作っています。感情的な説得力が最も高いパターンです。
+    </div>
+    <div class="essay" id="s1_t1">
+      <p>私が医学科を志望する理由は、幼い頃から医療が持つ力を身近に感じてきたからである。小さな頃、怪我や体調不良で苦しいときに、親が傍らで症状を見てくれた。病院に連れて行かれるとそこには優しい力があり、体だけでなく心まで支えられるぬくもりを感じた。両親がともに医師であるという環境の中で、医療が人の生きる力に直結する仕事であることを自然と学んできた。その背中を見て、自分も同じように人を支えたいと思うようになった。医師になりたいという気持ちは、あの頃からずっと変わっていない。</p>
+      <p>福井大学を選んだ理由は、地元に根ざした医療への貢献を強く意識したからである。高校に入ってから地域医療について調べる中で、地方が抱える医師不足や高齢化の課題が見えてきた。自分を育ててくれた福井という土地に、医師として恩返しがしたいという気持ちが生まれた。福井で生まれ、福井で学び、福井で働くという一貫したあり方が、自分の目指す医師像と重なると感じた。また貴学の医学教育は、臨床と地域医療をつなぐ実践的なカリキュラムが充実しており、地域医療を基盤として成長できる環境として最も適していると判断した。</p>
+    </div>
+    <div class="wordcount" id="s1_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s1_t1','s1_m1')">📋 パターンAの本文をコピー</button>
+    <div class="copied-msg" id="s1_m1"></div>
+  </div>
+
+  <!-- B -->
+  <div class="ppanel" id="s1_p2">
+    <div class="pp-header">
+      <div class="pp-badge bb">B</div>
+      <div>
+        <div class="pp-title">探究・知的好奇心軸（学術的な誠実さ）</div>
+        <div class="pp-sub">医療知識への関心→バランス型の学習姿勢→福井大学の教育環境</div>
+      </div>
+    </div>
+    <div class="strategy sb">
+      <strong>📌 このパターンの特徴</strong>
+      「ギリギリわかりそうな問いに向き合う」という知的好奇心と、模試で校内1位を維持し続けた実績を結びつけて、医学を学ぶ資質を強調しています。探究活動でのスライド改良のエピソードも活かしています。
+    </div>
+    <div class="essay" id="s1_t2">
+      <p>私が医学科を志望する理由は、答えがすぐには見えない問いを粘り強く追い続けることに喜びを感じるからである。高校では特定の科目に偏ることなく全体のバランスを重視して学習し、模試では全科目で校内一位、県内一桁の成績を維持してきた。また探究活動において、プレゼンテーションのスライドを構成する際、話の流れが定まらず何度も作り直すという経験をした。諦めずに改良を繰り返した結果、完成した瞬間の達成感は格別であり、その都度試行錯誤することの価値を深く実感した。この姿勢は、医学の複雑な知識体系を学ぶうえで不可欠だと考えている。</p>
+      <p>医師を目指すようになったのは、最近になって医療系の情報を積極的に調べる中で、医療が人の日常生活とどれほど密接に関わっているかを知ったことが大きい。両親が医師であるという環境もあり、医療を通じて人に直接関われる職業の重みを感じてきた。福井大学を志望する理由は、地域医療を基盤とした実践的な教育に加え、早期から病院に関われるカリキュラムが充実している点にある。福井の地で育った者として、福井の医療に貢献する医師になりたいという思いが、貴学を選ぶ最大の理由である。</p>
+    </div>
+    <div class="wordcount" id="s1_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s1_t2','s1_m2')">📋 パターンBの本文をコピー</button>
+    <div class="copied-msg" id="s1_m2"></div>
+  </div>
+
+  <!-- C -->
+  <div class="ppanel" id="s1_p3">
+    <div class="pp-header">
+      <div class="pp-badge bc">C</div>
+      <div>
+        <div class="pp-title">地域医療・一貫した貢献軸（面接連動型）</div>
+        <div class="pp-sub">地元への愛着→AI時代の医師像への問い→福井で育てられた責任感</div>
+      </div>
+    </div>
+    <div class="strategy sc">
+      <strong>📌 このパターンの特徴</strong>
+      「集団の中の医者」ではなく「一人の医者として福井の健康を支える」という独自のフレーズを使い、AIと医師の役割への関心も織り交ぜることで、思考の深さをアピールしています。面接での深掘りにも展開しやすいパターンです。
+    </div>
+    <div class="essay" id="s1_t3">
+      <p>私が医学科を志望する理由は、「集団の中の一人の医者」ではなく、患者一人一人の生活に向き合い、福井の人々の健康を支える医師になりたいからである。幼い頃から両親がともに医師であり、医療が人のそばにあり続けることの意味を自然と意識してきた。体調を崩すたびに親が症状を診てくれた経験から、医療には知識や技術だけでなく、人のぬくもりが宿ることを感じてきた。その経験が、医師という職業への憧れの原点である。</p>
+      <p>高校に入ってから地域医療について調べるにつれ、医師不足や在宅医療の課題が顕在化していることを知った。またAIが医療現場に浸透しつつある今、医師の役割がどう変化するかについても関心を持つようになった。AIと協働しながらも、患者さんと真剣に向き合い、人間にしかできない診療を届けることが、これからの医師に求められると考えている。福井大学を選ぶ理由は、地元で育った自分が地元の医療に貢献するという一貫した生き方を実現できるのが貴学だからである。地域医療関連の充実した講座と実習環境のもとで、福井の医療に真に役立つ医師として成長したい。</p>
+    </div>
+    <div class="wordcount" id="s1_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s1_t3','s1_m3')">📋 パターンCの本文をコピー</button>
+    <div class="copied-msg" id="s1_m3"></div>
+  </div>
+</div><!-- /s1 -->
+
+<!-- ===== S2: 医学・医療への適性 ===== -->
+<div class="section-panel" id="s2">
+  <div class="section-title">② 医学・医療への適性（500字以内、450〜490字目安）</div>
+  <div class="section-note">「どのような人間的資質・能力が医療に向いているか」を、具体的エピソードを交えて論じています。</div>
+
+  <div class="ptabs" id="tabs_s2">
+    <button class="ptab pa active" onclick="switchPat('s2',1)">パターンA<br>粘り強さ・改善軸</button>
+    <button class="ptab pb" onclick="switchPat('s2',2)">パターンB<br>コミュニケーション軸</button>
+    <button class="ptab pc" onclick="switchPat('s2',3)">パターンC<br>探究心・患者中心軸</button>
+  </div>
+
+  <!-- A -->
+  <div class="ppanel active" id="s2_p1">
+    <div class="pp-header">
+      <div class="pp-badge ba">A</div>
+      <div>
+        <div class="pp-title">粘り強さ・試行錯誤軸（実績裏付け型）</div>
+        <div class="pp-sub">学業成績の継続力＋探究活動の改良体験→医師としての粘り強さへ</div>
+      </div>
+    </div>
+    <div class="strategy sa">
+      <strong>📌 このパターンの特徴</strong>
+      模試の継続的な好成績と探究活動での試行錯誤を具体的に挙げ、「成果が出るまで諦めない姿勢」が医師としての適性につながることを示します。アドミッション・ポリシーの「自ら学び続ける意欲」とも整合します。
+    </div>
+    <div class="essay" id="s2_t1">
+      <p>私の最大の適性は、結果が出るまで粘り強く取り組み続ける力である。高校では特定の得意科目に頼らず全科目のバランスを重視して学習し、二年次の模試では全て校内一位、県内一桁、全国三桁前後の成績を維持し続けた。どの教科も手を抜かないという姿勢は、幅広い医学知識を修得し続けることに直結すると考えている。</p>
+      <p>また探究活動において、プレゼンテーションのスライドを制作する際、話の流れが整理できず何度も作り直した。苦しい時間が続いたが、改善を繰り返した結果として完成したときの達成感は格別だった。その経験から、初めてうまくいかなくても、その都度改良することが次の満足と成長につながると学んだ。医師は診断や治療において正解のない問いに向き合い続ける職業である。この改善を厭わない姿勢は、医師として生涯学び続けるうえで大きな武器になると確信している。</p>
+      <p>さらに、自分のやりたいことを自分が満足できるまで追求する力も適性の一つである。他者との比較や競争があれば、それがさらなる向上の原動力になる。患者さんのために最善を尽くすという医師の姿勢と、この自己研鑽への意欲は深く重なると考えている。</p>
+    </div>
+    <div class="wordcount" id="s2_c1"></div>
+    <button class="copy-btn ca" onclick="copyText('s2_t1','s2_m1')">📋 パターンAの本文をコピー</button>
+    <div class="copied-msg" id="s2_m1"></div>
+  </div>
+
+  <!-- B -->
+  <div class="ppanel" id="s2_p2">
+    <div class="pp-header">
+      <div class="pp-badge bb">B</div>
+      <div>
+        <div class="pp-title">コミュニケーション・人間関係軸</div>
+        <div class="pp-sub">人と話すことへの関心＋医師の多職種関係→患者中心の対話力</div>
+      </div>
+    </div>
+    <div class="strategy sb">
+      <strong>📌 このパターンの特徴</strong>
+      「人と話すことが面白い」という素直な関心と、「医者はあらゆる年代・職業の人と関わる」という認識を結びつけ、コミュニケーション力を適性として示します。アドミッション・ポリシーの「共感力・コミュニケーション力」に直接対応しています。
+    </div>
+    <div class="essay" id="s2_t2">
+      <p>私の医師としての適性として最も自信を持っているのは、人と向き合うことへの強い関心と対話力である。私が「面白い」と感じることの一つに、人と話すことがある。年齢や立場が異なる相手でも、相手の話に耳を傾け、その人の状況や思いを理解しようとすることが自然にできる。この姿勢は、患者さん一人一人と誠実に向き合う医師には不可欠な資質だと考えている。</p>
+      <p>医師は、どの職業よりも幅広い年代・職業・性格の人々と関わることができる仕事である。患者さんとの診察を通じて築かれる人間関係の中に、人として深く学べることが無数にある。私はその関わりの奥深さに医師という職業の大きな魅力を感じており、単に病気を治すだけでなく、患者さんの人生に寄り添い、信頼される存在になりたいと考えている。</p>
+      <p>また学業においては全科目のバランスを常に意識し、模試では校内一位、県内一桁の成績を継続して維持した。広い視野と知識の土台があってこそ、患者さんの多様な状況に対応できると考えるからである。知識と対話力の両輪を磨き続けることが、私の医師としての目標である。</p>
+    </div>
+    <div class="wordcount" id="s2_c2"></div>
+    <button class="copy-btn cb" onclick="copyText('s2_t2','s2_m2')">📋 パターンBの本文をコピー</button>
+    <div class="copied-msg" id="s2_m2"></div>
+  </div>
+
+  <!-- C -->
+  <div class="ppanel" id="s2_p3">
+    <div class="pp-header">
+      <div class="pp-badge bc">C</div>
+      <div>
+        <div class="pp-title">探究心・患者中心軸（思考の深さをアピール）</div>
+        <div class="pp-sub">知的好奇心→AI時代の医師役割→一人の患者に向き合う姿勢</div>
+      </div>
+    </div>
+    <div class="strategy sc">
+      <strong>📌 このパターンの特徴</strong>
+      「ギリギリわかりそうな問い」への知的好奇心と、AIが医療現場に入ってきた時代における医師の役割への思考を組み合わせ、思考力・判断力・表現力をアピールします。面接でのAI関連の深掘り質問に備えた構成です。
+    </div>
+    <div class="essay" id="s2_t3">
+      <p>私の適性として挙げたいのは、「ちょうど手が届きそうな難問」に向き合うことへの知的好奇心と、答えが出るまで考え続ける習慣である。数学や物理のように、理解の境界線上にある問題を粘り強く解きほぐすことに喜びを感じる。医学もまた、患者ごとに異なる複雑な状況を論理的かつ柔軟に判断する知的営みであり、この探究姿勢は医師として生涯役立つと確信している。</p>
+      <p>また私は、医師の役割がAIの進化によって変化する時代に強い関心を持っている。AIが画像診断や情報処理を担うようになっても、患者さんと向き合い、その人の言葉の背景にある不安や生活を読み取る問診は、人間にしかできない行為であり続けると考えている。AIと協働しながら、それに代替されない医師としての人間性を磨くことが、これからの時代の医療に求められると思っている。</p>
+      <p>高校では全科目バランスよく学び、模試で安定した成績を残してきた。また探究活動で何度も作り直しながらプレゼンを完成させた経験は、改善と反省を繰り返す医師の姿勢に通じている。この探究心と粘り強さを、医学という深い学問の習得に活かしたい。</p>
+    </div>
+    <div class="wordcount" id="s2_c3"></div>
+    <button class="copy-btn cc" onclick="copyText('s2_t3','s2_m3')">📋 パターンCの本文をコピー</button>
+    <div class="copied-msg" id="s2_m3"></div>
+  </div>
+</div><!-- /s2 -->
+
+<footer>
+  Draft for 福住 大地 ｜ 福井大学 医学部医学科 学校推薦型選抜Ⅱ<br>
+  ※ 必ずご自身の言葉で最終確認のうえ、提出書類へ落とし込んでください。<br>
+  個別教室のトライ × 若林卓生
+</footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sec-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['s1','s2'].indexOf(id);
+  document.querySelectorAll('.sec-btn')[idx].classList.add('active');
+}
+
+function switchPat(sec, n) {
+  const tabs = document.querySelectorAll('#tabs_' + sec + ' .ptab');
+  tabs.forEach((t,i) => t.classList.toggle('active', i === n-1));
+  [1,2,3].forEach(i => {
+    const p = document.getElementById(sec + '_p' + i);
+    if (p) p.classList.toggle('active', i === n);
+  });
+}
+
+function copyText(textId, msgId) {
+  const el = document.getElementById(textId);
+  const text = (el.innerText || el.textContent).trim();
+  navigator.clipboard.writeText(text).then(() => {
+    showMsg(msgId);
+  }).catch(() => {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    showMsg(msgId);
+  });
+}
+
+function showMsg(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = 'コピーしました ✓';
+  setTimeout(() => { el.textContent = ''; }, 2500);
+}
+
+function countChars(text) {
+  // 空白を除いた文字数（句読点含む）
+  return text.replace(/[ \t\n\r　]/g, '').length;
+}
+
+function countAndSet(textId, countId) {
+  const el = document.getElementById(textId);
+  const cEl = document.getElementById(countId);
+  if (!el || !cEl) return;
+  const n = countChars(el.innerText || el.textContent);
+  const warn = n > 500;
+  cEl.innerHTML = '文字数（空白除く・句読点含む）：<span class="' + (warn ? 'warn' : '') + '">' + n + ' 字</span>' + (warn ? '　⚠️ 500字超過' : (n >= 450 ? '　✅ 適正範囲' : '　（450字以上推奨）'));
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const pairs = [
+    ['s1_t1','s1_c1'],['s1_t2','s1_c2'],['s1_t3','s1_c3'],
+    ['s2_t1','s2_c1'],['s2_t2','s2_c2'],['s2_t3','s2_c3']
+  ];
+  pairs.forEach(([t,c]) => countAndSet(t,c));
+});
+</script>
+</body>
+</html>
